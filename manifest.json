@@ -5,7 +5,8 @@
 	"version": "1.0",
 	"offline_enabled": true,
 	"permissions": [
-		"storage"
+		"storage",
+		"topSites"
 	],
 	"background": {
 		"persistent": false,
