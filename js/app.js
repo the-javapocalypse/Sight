@@ -1,9 +1,30 @@
 (function () {
 
+    // Refrences for HTML elements
     var bodyElem = document.getElementById('body');
     var timeElem = document.getElementById('time');
-   
-    const url = "https://api.pexels.com/v1/photos/6718/";
+    var dateElem = document.getElementById('date');
+    var ayahElem = document.getElementById('ayah');
+    var hadeesElem = document.getElementById('hadees');
+    var index = 0;
+
+    // Quranic Verses
+    var verses = [
+        'And He found you lost and guided [you] (93:7)'
+    ];
+
+    // Hadiths
+    var hadiths = [
+        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan al-Tirmidhī 1924)'
+    ];
+
+    //Background Image Links
+    var backgrounds = [
+        "https://api.pexels.com/v1/photos/6718/",
+    ];
+
+    // Fetch and Set Background
+    const url = backgrounds[index];
     fetch(url, {
         method: 'GET',
         headers: {
@@ -17,20 +38,21 @@
         data => bodyElem.style.backgroundImage = "url(" + data['src']['original'] + ")"
     );
 
-    // Current Date
-    var today = '';
-    var d = new Date();
-    today += d.getDate() + '-';
-    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    today += months[d.getMonth()] + '-';
-    today += d.getFullYear();
 
-    // Current Time
+    // Set Current Time
     timeElem.innerHTML = getTime();
+    
+
+    // Set Ayah
+    ayahElem.innerHTML = verses[index];
+
+    // Set hadith
+    hadeesElem.innerHTML = hadiths[index];
 
     // Method to calculate and format time
     // Returns a string containing time
     function getTime(){
+        var d = new Date();
         let hr = d.getHours();
         let min = d.getMinutes();
         if (min < 10) {
@@ -42,6 +64,18 @@
             ampm = "pm";
         }
         return hr + ':' + min + ' ' + ampm;
+    }
+
+    // Method to calculate and format date
+    // Returns a string containing date
+    function getDate() {
+        var today = '';
+        var d = new Date();
+        today += d.getDate() + '-';
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        today += months[d.getMonth()] + '-';
+        today += d.getFullYear();
+        return today;
     }
 
     function MostVisitedWebsites(mostVisitedURLs) {
