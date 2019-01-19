@@ -24,21 +24,52 @@ body {
 }
 
 #upper {
-    height: 70vh;
+    height: 80vh;
 }
 
 #lower {
-    height: 30vh;
+    height: 20vh;
 }
+
 #favorites {
     text-align: right;
     list-style-type: none;
 }
 
-.full-width{
+.full-width {
     width: 100%;
 }
 
-.text-color{
+.text-color {
     color: #fff;
+    text-shadow: 2px 2px 10px #000000;
 }
+
+.links {
+    text-decoration: none !important;
+}
+
+.p5{
+    padding-top: 5px;
+}
+
+.links:hover {
+    color: #fff;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+.links:active {
+    color: #fff;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+.links:visited {
+    color: #fff;
+    text-shadow: 2px 2px 10px #000000;
+}
+
+.dateLocation {
+    position: relative;
+    top: -20px;
+}
+

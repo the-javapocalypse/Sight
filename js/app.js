@@ -41,7 +41,9 @@
 
     // Set Current Time
     timeElem.innerHTML = getTime();
-    
+
+    // Set Current Date
+    dateElem.innerHTML = getDate();
 
     // Set Ayah
     ayahElem.innerHTML = verses[index];
@@ -71,23 +73,30 @@
     function getDate() {
         var today = '';
         var d = new Date();
-        today += d.getDate() + '-';
+        today += d.getDate() + ' ';
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        today += months[d.getMonth()] + '-';
-        today += d.getFullYear();
+        today += months[d.getMonth()];
         return today;
     }
 
     function MostVisitedWebsites(mostVisitedURLs) {
-        var popupDiv = document.getElementById('favorites');
-        var ol = popupDiv.appendChild(document.createElement('ol'));
+        // var popupDiv = document.getElementById('favorites');
+        // var ol = popupDiv.appendChild(document.createElement('ol'));
+
+        var ol = document.getElementById('favorites');
 
         for (var i = 0; i < mostVisitedURLs.length; i++) {
             var li = ol.appendChild(document.createElement('li'));
+            li.className = "p5";
             var a = li.appendChild(document.createElement('a'));
+            a.className = "links text-color";
             a.href = mostVisitedURLs[i].url;
-            a.appendChild(document.createTextNode(mostVisitedURLs[i].title));
-            a.addEventListener('click', onAnchorClick);
+            let title = mostVisitedURLs[i].title;
+            if(title.length > 20){
+                title = title.slice(0,20) + '...';
+            }
+            a.appendChild(document.createTextNode(title));
+
         }
     }
     // Open the link in a new tab of the current window.
