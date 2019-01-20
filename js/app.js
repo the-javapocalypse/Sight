@@ -156,6 +156,14 @@
 
     });
 
+    // Display/Hide Favourites
+    $('#displayFavourites').bind('change', function () {
+        if ($(this).is(':checked'))
+            $("#favouritesDiv").addClass('hide');
+        else
+            $("#favouritesDiv").removeClass('hide');
+
+    });
 
 
 
