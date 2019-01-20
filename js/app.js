@@ -4,12 +4,14 @@
     Todo: Might make custom endpoints for images, verses and hadtihs
           Todo in local storage
           Execute scripts in background.js to load ahead of time
+          Replace all CDNs with local files
      */
 
     // References for HTML elements
     var bodyElem = document.getElementById('body');
     var timeElem = document.getElementById('time');
     var dateElem = document.getElementById('date');
+    var favouritesElem = document.getElementById('favouritesDiv');
     var ayahElem = document.getElementById('ayah');
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
@@ -49,7 +51,9 @@
     bodyElem.style.backgroundImage = "url(\"https://images.pexels.com/photos/1772973/pexels-photo-1772973.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")";
 
     // Set Current Time
-    timeElem.innerHTML = getTime();
+    // param: 1 for 12 hours format
+    //        0 for 24 hours format
+    timeElem.innerHTML = getTime(1);
 
     // Set Current Date
     dateElem.innerHTML = getDate();
@@ -62,19 +66,38 @@
 
     // Method to calculate and format time
     // Returns a string containing time
-    function getTime(){
-        var d = new Date();
-        let hr = d.getHours();
-        let min = d.getMinutes();
-        if (min < 10) {
-            min = "0" + min;
+    function getTime(twelvehour){
+        // 12 hours format
+        if (twelvehour){
+            var d = new Date();
+            let hr = d.getHours();
+            let min = d.getMinutes();
+            if (min < 10) {
+                min = "0" + min;
+            }
+            let ampm = "am";
+            if( hr > 12 ) {
+                hr -= 12;
+                ampm = "pm";
+            }
+            if (hr < 10) {
+                hr = "0" + hr;
+            }
+            return hr + ':' + min + ' ' + ampm;
         }
-        let ampm = "am";
-        if( hr > 12 ) {
-            hr -= 12;
-            ampm = "pm";
+        // 24 hours format
+        else{
+            var d = new Date();
+            let hr = d.getHours();
+            let min = d.getMinutes();
+            if (min < 10) {
+                min = "0" + min;
+            }
+            if (hr < 10) {
+                hr = "0" + hr;
+            }
+            return hr + ':' + min + ' ';
         }
-        return hr + ':' + min + ' ' + ampm;
     }
 
     // Method to calculate and format date
@@ -124,8 +147,21 @@
     // Get most visited sites a.k.a favourites
     chrome.topSites.get(MostVisitedWebsites);
 
+    // Toggle time between 12 hours and 24 hours format
+    $('#isSelected24').bind('change', function () {
+        if ($(this).is(':checked'))
+            timeElem.innerHTML = getTime(0);
+        else
+            timeElem.innerHTML = getTime(1);
+
+    });
+
+
+
+
 
     //Test Javascript Start
+
 
     //Test JavaScript End
 
