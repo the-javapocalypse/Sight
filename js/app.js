@@ -1,6 +1,12 @@
 (function () {
 
-    // Refrences for HTML elements
+    /*
+    Todo: Might make custom endpoints for images, verses and hadtihs
+          Todo in local storage
+          Execute scripts in background.js to load ahead of time
+     */
+
+    // References for HTML elements
     var bodyElem = document.getElementById('body');
     var timeElem = document.getElementById('time');
     var dateElem = document.getElementById('date');
@@ -20,24 +26,27 @@
 
     //Background Image Links
     var backgrounds = [
-        "https://api.pexels.com/v1/photos/6718/",
+        "6718/",
     ];
 
-    // Fetch and Set Background
-    const url = backgrounds[index];
-    fetch(url, {
-        method: 'GET',
-        headers: {
-            'Authorization': '563492ad6f917000010000014f64c454dbfb46d2a1597f15f9783eb5',
-        }
-    })
-        .then(
-            response => response.json() // .json(), etc.
-            // same as function(response) {return response.text();}
-        ).then(
-        data => bodyElem.style.backgroundImage = "url(" + data['src']['original'] + ")"
-    );
 
+    // Fetch and Set Background
+    // const url = "https://api.pexels.com/v1/photos/" + backgrounds[index];
+    // fetch(url, {
+    //     method: 'GET',
+    //     headers: {
+    //         'Authorization': '563492ad6f917000010000014f64c454dbfb46d2a1597f15f9783eb5',
+    //     }
+    // })
+    //     .then(
+    //         response => response.json() // .json(), etc.
+    //         // same as function(response) {return response.text();}
+    //     ).then(
+    //     data => bodyElem.style.backgroundImage = "url(" + data['src']['original'] + ")"
+    // );
+
+    // Set Background
+    bodyElem.style.backgroundImage = "url(\"https://images.pexels.com/photos/1772973/pexels-photo-1772973.png?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260\")";
 
     // Set Current Time
     timeElem.innerHTML = getTime();
@@ -79,33 +88,40 @@
         return today;
     }
 
+    // Method to get most visited websites using chrome api
+    // Returns: Nothing
+    // Populate the list in dashboard.html with frequently visited websites
     function MostVisitedWebsites(mostVisitedURLs) {
-        // var popupDiv = document.getElementById('favorites');
-        // var ol = popupDiv.appendChild(document.createElement('ol'));
-
+        // get the list
         var ol = document.getElementById('favorites');
 
         for (var i = 0; i < mostVisitedURLs.length; i++) {
+            // create new list item
             var li = ol.appendChild(document.createElement('li'));
+            // add class for padding
             li.className = "p5";
+            // create anchor element
             var a = li.appendChild(document.createElement('a'));
+            // add class to remove anchor default styling
             a.className = "links text-color";
+            // do the shit here
             a.href = mostVisitedURLs[i].url;
             let title = mostVisitedURLs[i].title;
             if(title.length > 20){
                 title = title.slice(0,20) + '...';
             }
             a.appendChild(document.createTextNode(title));
-
         }
     }
+
     // Open the link in a new tab of the current window.
+    // Not useful but well.. Might come in handy
     function onAnchorClick(event) {
         chrome.tabs.create({ url: event.srcElement.href });
         return false;
     }
 
-
+    // Get most visited sites a.k.a favourites
     chrome.topSites.get(MostVisitedWebsites);
 
 
