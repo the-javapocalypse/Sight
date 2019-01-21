@@ -12,6 +12,10 @@
           Local Image loads before the actual image. Replace it by sight logo maybe?
      */
 
+    /*
+    Link for Ayats: https://www.ultraupdates.com/2015/07/beautiful-inspirational-islamic-quran-quotes-verses-in-english/
+     */
+
     // References for HTML elements
     var bodyElem = document.getElementById('body');
     var timeElem = document.getElementById('time');
