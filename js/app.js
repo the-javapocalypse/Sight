@@ -9,6 +9,7 @@
 
     /*
     Bugs: Time at 12:xx when in 12 hours format shows 00:xx
+          Local Image loads before the actual image. Replace it by sight logo maybe?
      */
 
     // References for HTML elements
@@ -22,7 +23,71 @@
 
     // Quranic Verses
     var verses = [
-        'And He found you lost and guided [you] (93:7)'
+        'And He found you lost and guided [you]. (93:7)',
+        "O mankind! Verily, the Promise of Allah is true. So let not this present life deceive you. (35:5)",
+        "Allah has promised those who believe and do righteous deeds [that] for them there is forgiveness and great reward. (5:9)",
+        "He released the two seas, meeting [side by side]; Between them is a barrier [so] neither of them transgresses. (55:19-20)",
+        "And your Lord says, \"Call upon Me; I will respond to you.\"... (40:60)",
+        "Say, \"O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah . Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful.\" (39:53)",
+        "Guide us to the straight path. (1:6)",
+        "Is there not in Hell a residence for the arrogant? (39:60)",
+        "So verily with the hardship, there is a relief, verily with the hardship, there is a relief. (94:5-6)",
+        "Do they not see the birds controlled in the atmosphere of the sky? none holds them up except Allah. Indeed in that are signs for a people who believe. (16:79)",
+        "So be patient. Indeed, the promise of ALLAH is truth. (30:60)",
+        "Our Lord, forgive me and my parents and (all) the believers on the Day when the reckoning will be established. (14:41)",
+        "And for those who fear Allah, He will make their path easy. (65:4)",
+        "Allah does not burden a soul beyond that it can bear. (2:286)",
+        "Did he not realise that Allah is watching? (96:14)",
+        "and Allah is the best of providers. (62:11)",
+        "Indeed, Prayer prohibits immorality and wrongdoing. (29:45)",
+        "And seek help in patience and prayers. (2:45)",
+        "It is He who created the heavens and earth in six days and then established Himself above the Throne. (57:4)",
+        "He knows what penetrates into the earth and what emerges from it and what descends from the heaven and what ascends therein; and He is with you wherever you are. And Allah, of what you do, is Seeing. (57:4)",
+        "Indeed, my Lord is the Hearer of supplication. (14:39)",
+        "and He is with you wherever you are. (57:4)",
+        "This is the book about which there is no doubt, A guidance for those conscious of Allah. (2:2)",
+        "And Say, \"My lord, Increase me in knowledge\". (20:114)",
+        "And Allah is with the believers. (8:19)",
+        "Assuredly, Allah knows what they conceal and what they declare. (16:23)",
+        "Indeed, He does not like the arrogant. (16:23)",
+        "[Allah] said, \"Fear not. Indeed, I am with you both; I hear and I see. (20:46)",
+        "And We have not sent you, [O Muhammad], except as a mercy to the worlds. (21:107)",
+        "And We created you in pairs. (78:8)",
+        "They are [varying] degrees in the sight of Allah, and Allah is Seeing of whatever they do. (3:163)",
+        "And be patient, [O Muhammad], for the decision of your Lord, for indeed, you are in Our eyes. (52:48)",
+        "My mercy encompasses all things. (7:156)",
+        "And you do not will except that Allah wills. Indeed, Allah is ever Knowing and Wise. (76:30)",
+        "Unquestionably, to Allah belongs whatever is in the heavens and the earth. (10:55)",
+        "Indeed, the patient will be given their reward without account. (39:10)",
+        "So remember Me; I will remember you. (2:152)",
+        "And my success is not but through Allah. Upon him I have relied, and to Him I return. (11:88)",
+        "So which of the favors of your Lord would you deny? (55:13)",
+        "Say, \"Who is Lord of the heavens and earth?\" Say, \"Allah.\" (13:16)",
+        " Say, \" Allah is the Creator of all things, and He is the One, the Prevailing.\" (13:16)",
+        "And, [O Muhammad], say, \"My Lord, forgive and have mercy, and You are the best of the merciful.\" (23:118)",
+        "say, \"Indeed we belong to Allah, and indeed to Him we will return.\" (2:156)",
+        "So whoever does an atom's weight of good will see it. (99:7)",
+        "And never say of anything, \"Indeed, I will do that tomorrow,\" Except [when adding], \"If Allah wills.\" (18:23-24)",
+        "O you who have believed, remember Allah with much remembrance. (33:41)",
+        "Indeed, my Lord is near and responsive. (11:61)",
+        "My Lord, build for me near You a house in Paradise... (66:11)",
+        "Surely, Good deeds erase bad deeds. (11:114)",
+        "And whoever is guided is only guided for [the benefit of] himself. (27:92)",
+        "And rely upon Allah ; and sufficient is Allah as Disposer of affairs. (33:3)",
+        "Sufficient for us is Allah, and [He is] the best Disposer of affairs. (3:173)",
+        "And the sun runs [on course] toward its stopping point. That is the determination of the Exalted in Might, the Knowing. (36:38)",
+        "And We have certainly beautified the nearest heaven with stars. (67:5)",
+        "Say, \"It is Allah who saves you from it and from every distress; then you [still] associate others with Him.\" (6:64)",
+        "And do good to parents, and relatives, and orphans, and the needy.. (2:83)",
+        "And Speak to people Kindly. (2:83)",
+        "And it is He who created the night and the day and the sun and the moon. (21:33)",
+        "And when I am ill, it is He who cures me. (26:80)",
+        "The day when there will not benefit [anyone] wealth or children, but only one who comes to Allah with a sound heart. (26:88-89)",
+        "And it will be said to them, \"Where are those you used to worship other than Allah ? Can they help you or help themselves?\" (26:92-93)",
+        "And when you have decided, then rely upon Allah . Indeed, Allah loves those who rely [upon Him]. (3:159)",
+        "And We have made some of you [people] as trial for others - will you have patience? And ever is your Lord, Seeing. (25:20)",
+        "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient. (2:155)",
+        "And ask forgiveness of your Lord and then repent to Him. Indeed, my Lord is Merciful and Affectionate. (11:90)"
     ];
 
     // Hadiths
@@ -400,7 +465,7 @@
         "https://images.pexels.com/photos/1034887/pexels-photo-1034887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 ];
-    
+
     // Fetch and Set Background
     // const url = "https://api.pexels.com/v1/photos/" + backgrounds[index];
     // fetch(url, {
