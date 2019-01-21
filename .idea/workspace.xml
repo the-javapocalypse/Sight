@@ -83,7 +83,7 @@
         <counts>
           <entry key="css" value="262" />
           <entry key="html" value="1196" />
-          <entry key="js" value="3460" />
+          <entry key="js" value="4031" />
           <entry key="json" value="29" />
           <entry key="md" value="63" />
         </counts>
@@ -93,7 +93,7 @@
           <entry key="CSS" value="262" />
           <entry key="HTML" value="1196" />
           <entry key="JSON" value="29" />
-          <entry key="JavaScript" value="3460" />
+          <entry key="JavaScript" value="4031" />
           <entry key="PLAIN_TEXT" value="63" />
         </counts>
       </usages-collector>
@@ -124,8 +124,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="820">
-                  <caret line="349" column="9" selection-start-line="349" selection-start-column="9" selection-end-line="349" selection-end-column="9" />
+                <state relative-caret-position="575">
+                  <caret line="400" column="120" selection-start-line="400" selection-start-column="120" selection-end-line="400" selection-end-column="120" />
                 </state>
               </provider>
             </entry>
@@ -176,6 +176,11 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>1491419</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -272,12 +277,12 @@
       <workItem from="1547986583995" duration="6487000" />
       <workItem from="1548014293238" duration="85000" />
       <workItem from="1548056548416" duration="10114000" />
-      <workItem from="1548080009845" duration="3283000" />
+      <workItem from="1548080009845" duration="4414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29509000" />
+    <option name="totallyTimeSpent" value="30640000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -351,8 +356,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="820">
-          <caret line="349" column="9" selection-start-line="349" selection-start-column="9" selection-end-line="349" selection-end-column="9" />
+        <state relative-caret-position="575">
+          <caret line="400" column="120" selection-start-line="400" selection-start-column="120" selection-end-line="400" selection-end-column="120" />
         </state>
       </provider>
     </entry>

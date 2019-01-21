@@ -364,29 +364,43 @@
         "https://images.pexels.com/photos/163585/redwood-national-park-california-hdr-landscape-163585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "https://images.pexels.com/photos/248796/pexels-photo-248796.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "https://images.pexels.com/photos/137043/pexels-photo-137043.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ];
-
-    console.log(getNumberOfDay());
-
+        "https://images.pexels.com/photos/428430/pexels-photo-428430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1562462/pexels-photo-1562462.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/204262/pexels-photo-204262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/301391/pexels-photo-301391.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/301375/pexels-photo-301375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/572939/pexels-photo-572939.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1608379/pexels-photo-1608379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/547112/pexels-photo-547112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/432812/pexels-photo-432812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/140234/pexels-photo-140234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/355805/pexels-photo-355805.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1029245/pexels-photo-1029245.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1624441/pexels-photo-1624441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/552791/pexels-photo-552791.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/221148/pexels-photo-221148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/552788/pexels-photo-552788.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1532771/pexels-photo-1532771.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1133504/pexels-photo-1133504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1561993/pexels-photo-1561993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1068737/pexels-photo-1068737.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/460621/pexels-photo-460621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/288621/pexels-photo-288621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1090977/pexels-photo-1090977.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/351448/pexels-photo-351448.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1003816/pexels-photo-1003816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/91505/pexels-photo-91505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/258108/pexels-photo-258108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/95816/pexels-photo-95816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1002106/pexels-photo-1002106.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/753873/pexels-photo-753873.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/1034887/pexels-photo-1034887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+];
+    
     // Fetch and Set Background
     // const url = "https://api.pexels.com/v1/photos/" + backgrounds[index];
     // fetch(url, {
@@ -402,10 +416,26 @@
     //     data => bodyElem.style.backgroundImage = "url(" + data['src']['original'] + ")"
     // );
 
-    console.log(imageExists(backgrounds[backgrounds.length - 1]));
+    try{
+        let idx = getNumberOfDay() - 1;
+        // Just making sure. Yk, It will work fine but just double checking for bugs lol
+        if(idx < 0)
+            idx = 0;
+        else if(idx > 366 || idx > (backgrounds.length - 1))
+            idx = backgrounds.length - 1;
+        // Check if img exists at url
+        // Set Background
+        if(imageExists(backgrounds[idx]))
+            bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
+        // If image does not exists, substitute it with local img. Boom baby!
+        else
+            bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
+    }catch (e) {
+        // If anything decides to screw up, use local img as the background
+        bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
+    }
 
-    // Set Background
-    bodyElem.style.backgroundImage = "url(" + backgrounds[backgrounds.length - 1] + ")";
+
 
     // Set Current Time
     // param: 1 for 12 hours format
