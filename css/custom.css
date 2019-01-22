@@ -57,6 +57,7 @@ body {
 .links:hover {
     color: #fff;
     text-shadow: 2px 2px 10px #000000;
+    font-size: 120%;
 }
 
 .links:active {
@@ -67,6 +68,10 @@ body {
 .links:visited {
     color: #fff;
     text-shadow: 2px 2px 10px #000000;
+}
+
+.liFavicon {
+    padding-right: 0.2em;
 }
 
 .dateLocation {
@@ -81,3 +86,6 @@ body {
 .btn:focus {
     outline: none;
 }
+
+
+

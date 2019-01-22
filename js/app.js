@@ -114,7 +114,9 @@
         "Indeed, Allah is Knowing and Acquainted. (31:34)",
         "The life of this world is only the enjoyment of Deception. (3:185)",
         "And your Lord says, \"Call upon Me; I will respond to you.\" (40:60)",
-        ""
+        "and Allah would not punish them while they seek forgiveness. (8:33)",
+        "So remember Me; I will remember you. (2,152)",
+        "He knows what is within the heavens and earth and knows what you conceal and what you declare. And Allah is Knowing of that within the breasts. (64:4)"
     ];
 
     // Hadiths
@@ -610,6 +612,13 @@
             var li = ol.appendChild(document.createElement('li'));
             // add class for padding
             li.className = "p5";
+
+            var _img=document.createElement('img');
+            _img.src="https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
+            _img.id="foo"+i;
+            _img.className = "liFavicon";
+            li.appendChild(_img);
+
             // create anchor element
             var a = li.appendChild(document.createElement('a'));
             // add class to remove anchor default styling
@@ -618,7 +627,7 @@
             a.href = mostVisitedURLs[i].url;
             let title = mostVisitedURLs[i].title;
             if(title.length > 20){
-                title = title.slice(0,20) + '...';
+                title = title.slice(0,15) + '...';
             }
             a.appendChild(document.createTextNode(title));
         }
