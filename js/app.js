@@ -14,6 +14,7 @@
 
     /*
     Link for Ayats: https://www.ultraupdates.com/2015/07/beautiful-inspirational-islamic-quran-quotes-verses-in-english/
+    Link for Ahadees: https://sunnahonline.com/library/purification-of-the-soul/194-best-of-the-best-the
      */
 
     // References for HTML elements
