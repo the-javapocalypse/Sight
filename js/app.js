@@ -91,7 +91,30 @@
         "And when you have decided, then rely upon Allah . Indeed, Allah loves those who rely [upon Him]. (3:159)",
         "And We have made some of you [people] as trial for others - will you have patience? And ever is your Lord, Seeing. (25:20)",
         "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient. (2:155)",
-        "And ask forgiveness of your Lord and then repent to Him. Indeed, my Lord is Merciful and Affectionate. (11:90)"
+        "And ask forgiveness of your Lord and then repent to Him. Indeed, my Lord is Merciful and Affectionate. (11:90)",
+        "Indeed, Allah is with those who fear Him and those who are doers of good. (16:128)",
+        "And worship your Lord until there comes to you the certainty (death). (15:99)",
+        "And do good; indeed, Allah loves the doers of good. (2:195)",
+        "And hold firmly to the rope of Allah all together and do not become divided. (3:103)",
+        "And not equal are the good deed and the bad. Repel [evil] by that [deed] which is better. (41:34)",
+        "O mankind, indeed We have created you from male and female and made you peoples and tribes that you may know one another. Indeed, the most noble of you in the sight of Allah is the most righteous of you. Indeed, Allah is Knowing and Acquainted. (49:13)",
+        "Every soul will taste death. (3:185)",
+        "And what is the life of this world except the enjoyment of delusion. (3:185)",
+        "And all of them are coming to Him on the Day of Resurrection alone. (19:95)",
+        "And ease for me my task. (20:26)",
+        "So when the Qur'an is recited, then listen to it and pay attention that you may receive mercy. (7:204)",
+        "Say, \"Indeed, the death from which you flee - indeed, it will meet you. Then you will be returned to the Knower of the unseen and the witnessed, and He will inform you about what you used to do.\" (62:8)",
+        "[O Men] Are you a more difficult creation or is the heaven? Allah constructed it. (79:27)",
+        "And when you testify, be just, even if [it concerns] a near relative. (6:152)",
+        "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor], but if you deny, indeed, My punishment is severe.' (14:7)",
+        "If Allah should aid you, no one can overcome you; but if He should forsake you, who is there that can aid you after Him? (3:160)",
+        "And upon Allah let the believers rely. (3:160)",
+        "Indeed, Allah [alone] has knowledge of the Hour and sends down the rain and knows what is in the wombs. (31:34)",
+        "And no soul perceives what it will earn tomorrow, and no soul perceives in what land it will die. (31:34)",
+        "Indeed, Allah is Knowing and Acquainted. (31:34)",
+        "The life of this world is only the enjoyment of Deception. (3:185)",
+        "And your Lord says, \"Call upon Me; I will respond to you.\" (40:60)",
+        ""
     ];
 
     // Hadiths
@@ -515,7 +538,7 @@
     dateElem.innerHTML = getDate();
 
     // Set Ayah
-    ayahElem.innerHTML = verses[index];
+    ayahElem.innerHTML = verses[ verses.length - 1 ];
 
     // Set hadith
     hadeesElem.innerHTML = hadiths[index];
