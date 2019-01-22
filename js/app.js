@@ -494,37 +494,59 @@
         "https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "https://images.pexels.com/photos/1034887/pexels-photo-1034887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
         "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-];
+    ];
 
     // The Index for Ayat, Hadith and Wallpaper. This is also the day number
     let idx = getNumberOfDay() - 1;
 
     // Update Ayahs, Hadiths and Wallpaper
-    try{
+    try {
         // Just making sure. Yk, It will work fine but just double checking for bugs lol
-        if(idx < 0)
+        if (idx < 0)
             idx = 0;
-        else if(idx > 366 || idx > (backgrounds.length - 1))
+        else if (idx > 366 || idx > (backgrounds.length - 1))
             idx = backgrounds.length - 1;
         // Check if img exists at url
         // Set Background
-        if(imageExists(backgrounds[idx])){
+        // if (imageExists(backgrounds[idx])) {
+        //     console.log('U1');
+        //     bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
+        // }
+        // // If image does not exists, substitute it with local img. Boom baby!
+        // else {
+        //     console.log('E1');
+        //     bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
+        // }
+
+
+        const checkImage = (path, fallback) => {
+            return new Promise(resolve => {
+                const img = new Image();
+                img.src = path;
+                img.onload = () => resolve(path);
+                img.onerror = () => resolve(fallback);
+            });
+        };
+
+        // Usage:
+
+        const link = checkImage(
+            backgrounds[idx]
+        ).then(result => {
             console.log('U1');
             bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
-        }
-        // If image does not exists, substitute it with local img. Boom baby!
-        else{
+        }, err => {
             console.log('E1');
             bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
-        }
-    }catch (e) {
+        });
+
+    } catch (e) {
         // If anything decides to screw up, use local img as the background
         bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
     }
 
     // Set Ayat
     ayahElem.innerHTML = verses[idx];
-
 
 
     // Set Current Time
@@ -540,9 +562,9 @@
 
     // Method to calculate and format time
     // Returns a string containing time
-    function getTime(twelvehour){
+    function getTime(twelvehour) {
         // 12 hours format
-        if (twelvehour){
+        if (twelvehour) {
             var d = new Date();
             let hr = d.getHours();
             let min = d.getMinutes();
@@ -550,7 +572,7 @@
                 min = "0" + min;
             }
             let ampm = "am";
-            if( hr > 12 ) {
+            if (hr > 12) {
                 hr -= 12;
                 ampm = "pm";
             }
@@ -560,7 +582,7 @@
             return hr + ':' + min + ' ' + ampm;
         }
         // 24 hours format
-        else{
+        else {
             var d = new Date();
             let hr = d.getHours();
             let min = d.getMinutes();
@@ -606,9 +628,9 @@
             // add class for padding
             li.className = "p5";
 
-            var _img=document.createElement('img');
-            _img.src="https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
-            _img.id="foo"+i;
+            var _img = document.createElement('img');
+            _img.src = "https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
+            _img.id = "foo" + i;
             _img.className = "liFavicon";
             li.appendChild(_img);
 
@@ -619,8 +641,8 @@
             // do the shit here
             a.href = mostVisitedURLs[i].url;
             let title = mostVisitedURLs[i].title;
-            if(title.length > 20){
-                title = title.slice(0,15) + '...';
+            if (title.length > 20) {
+                title = title.slice(0, 15) + '...';
             }
             a.appendChild(document.createTextNode(title));
         }
@@ -629,7 +651,7 @@
     // Open the link in a new tab of the current window.
     // Not useful but well.. Might come in handy
     function onAnchorClick(event) {
-        chrome.tabs.create({ url: event.srcElement.href });
+        chrome.tabs.create({url: event.srcElement.href});
         return false;
     }
 
@@ -657,7 +679,7 @@
     // Check if image exists i.e if the image url is valid or not
     // Param: Image url
     // Returns Boolean
-    function imageExists(url){
+    function imageExists(url) {
         var image = new Image();
         image.src = url;
         if (!image.complete) {
