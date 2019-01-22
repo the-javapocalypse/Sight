@@ -496,23 +496,11 @@
         "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 ];
 
-    // Fetch and Set Background
-    // const url = "https://api.pexels.com/v1/photos/" + backgrounds[index];
-    // fetch(url, {
-    //     method: 'GET',
-    //     headers: {
-    //         'Authorization': '563492ad6f917000010000014f64c454dbfb46d2a1597f15f9783eb5',
-    //     }
-    // })
-    //     .then(
-    //         response => response.json() // .json(), etc.
-    //         // same as function(response) {return response.text();}
-    //     ).then(
-    //     data => bodyElem.style.backgroundImage = "url(" + data['src']['original'] + ")"
-    // );
+    // The Index for Ayat, Hadith and Wallpaper. This is also the day number
+    let idx = getNumberOfDay() - 1;
 
+    // Update Ayahs, Hadiths and Wallpaper
     try{
-        let idx = getNumberOfDay() - 1;
         // Just making sure. Yk, It will work fine but just double checking for bugs lol
         if(idx < 0)
             idx = 0;
@@ -520,15 +508,22 @@
             idx = backgrounds.length - 1;
         // Check if img exists at url
         // Set Background
-        if(imageExists(backgrounds[idx]))
+        if(imageExists(backgrounds[idx])){
+            console.log('U1');
             bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
+        }
         // If image does not exists, substitute it with local img. Boom baby!
-        else
+        else{
+            console.log('E1');
             bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
+        }
     }catch (e) {
         // If anything decides to screw up, use local img as the background
         bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
     }
+
+    // Set Ayat
+    ayahElem.innerHTML = verses[idx];
 
 
 
@@ -539,9 +534,6 @@
 
     // Set Current Date
     dateElem.innerHTML = getDate();
-
-    // Set Ayah
-    ayahElem.innerHTML = verses[ verses.length - 1 ];
 
     // Set hadith
     hadeesElem.innerHTML = hadiths[index];
