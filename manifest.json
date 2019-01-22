@@ -11,10 +11,8 @@
 	"background": {
 		"scripts": [ "background.js" ]
 	},
-	"icons": { 
-		"16": "img/icon16.png",
-		"48": "img/icon48.png",
-		"128": "img/icon128.png" 
+	"icons": {
+		"128": "img/128.png"
 	},
 	"chrome_url_overrides": {
 		"newtab": "dashboard.html"
