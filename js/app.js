@@ -734,7 +734,8 @@
         for (i = 0; i < close.length; i++) {
             close[i].onclick = function() {
                 var div = this.parentElement;
-                div.style.display = "none";
+                // div.style.display = "none";
+                div.className = "hide";
             }
         }
 
@@ -744,6 +745,13 @@
             if (ev.target.tagName === 'LI') {
                 ev.target.classList.toggle('checked');
                 console.log('Checked');
+                //for all <li> with class "02"
+                $('li.checked').each(function(element) {
+                    console.log(this.innerHTML);
+                });
+                $('li.hide').each(function(element) {
+                    console.log(this.innerHTML);
+                });
             }
         }, false);
     }

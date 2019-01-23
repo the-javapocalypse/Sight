@@ -133,7 +133,7 @@
         <counts>
           <entry key="css" value="172" />
           <entry key="html" value="400" />
-          <entry key="js" value="316" />
+          <entry key="js" value="397" />
           <entry key="json" value="59" />
         </counts>
       </usages-collector>
@@ -142,7 +142,7 @@
           <entry key="CSS" value="172" />
           <entry key="HTML" value="400" />
           <entry key="JSON" value="59" />
-          <entry key="JavaScript" value="316" />
+          <entry key="JavaScript" value="397" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -183,12 +183,13 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/js/app.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="966">
-                      <caret line="790" column="45" selection-start-line="790" selection-start-column="45" selection-end-line="790" selection-end-column="45" />
+                    <state relative-caret-position="276">
+                      <caret line="12" column="55" selection-start-line="12" selection-start-column="55" selection-end-line="12" selection-end-column="55" />
                       <folding>
+                        <element signature="e#1048#1064#0" />
                         <element signature="e#1071#9874#0" />
                         <element signature="e#10290#55212#0" />
                       </folding>
@@ -196,7 +197,7 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/dashboard.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="253">
@@ -229,8 +230,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/css/custom.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="690">
-                      <caret line="155" column="36" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="36" />
+                    <state relative-caret-position="46">
+                      <caret line="139" column="42" lean-forward="true" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="42" />
                     </state>
                   </provider>
                 </entry>
@@ -244,8 +245,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="851">
-                  <caret line="746" column="18" selection-start-line="746" selection-start-column="18" selection-end-line="746" selection-end-column="18" />
+                <state relative-caret-position="653">
+                  <caret line="737" column="39" selection-start-line="737" selection-start-column="39" selection-end-line="737" selection-end-column="39" />
                   <folding>
                     <element signature="e#1289#10092#0" />
                     <element signature="e#10508#55430#0" />
@@ -347,12 +348,12 @@
       <workItem from="1548130734220" duration="7785000" />
       <workItem from="1548173203242" duration="2748000" />
       <workItem from="1548230209554" duration="858000" />
-      <workItem from="1548250754563" duration="5749000" />
+      <workItem from="1548250754563" duration="7242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52973000" />
+    <option name="totallyTimeSpent" value="54466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -448,8 +449,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="746" column="18" selection-start-line="746" selection-start-column="18" selection-end-line="746" selection-end-column="18" />
+        <state relative-caret-position="653">
+          <caret line="737" column="39" selection-start-line="737" selection-start-column="39" selection-end-line="737" selection-end-column="39" />
           <folding>
             <element signature="e#1289#10092#0" />
             <element signature="e#10508#55430#0" />
