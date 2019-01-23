@@ -1,146 +1,163 @@
 <!doctype html>
 <html>
-	<head>
-	    <meta charset="utf-8">
-		<meta name="author" content="Muhammad Ali Zia">
-		<title>New Tab | Sight</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Muhammad Ali Zia">
+    <title>New Tab | Sight</title>
 
-		<!-- Scripts -->
-		<script src="js/jquery-2.0.3.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		
-		<!-- Cascading Style Sheets -->
-		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-		<link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- Scripts -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-		<!--FontAwesome CDN-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- Cascading Style Sheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+
+    <!--FontAwesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
+</head>
 
-	</head>
+<body>
 
-	<body>
+<div id="body" class="container">
+    <!--The Upper Half of Page-->
+    <div id="upper">
+        <div class="row">
+            <!--Upper Left Half Start-->
+            <div class="col-2">
 
-	<div id="body">
-		<!--The Upper Half of Page-->
-		<div id="upper">
-			<div class="row full-width">
-				<!--Time Div-->
-				<div class="col-md-12 pull-right" id="timeDiv">
-					<br>
-					<h1 id="time" class="text-color"></h1>
-				</div>
-				<!--Time Div End-->
-			</div>
-			<div class="row full-width">
-				<!--Date Div-->
-				<div class="col-md-12 pull-right">
-					<h4 id="date" class="text-color dateLocation"></h4>
-				</div>
-				<!--Date Div End-->
-			</div>
-			<div class="row full-width" id="favouritesDiv">
-				<!--Favourites Div-->
-				<div class="col-md-12 pull-right" id="favoritesDiv">
-					<h2 class="text-color text-right">
-						Favourites
-					</h2>
-					<hr align="right" class="text-color" id="favouritesHr">
-					<div>
-						<h4>
-						<ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
-						</ol>
-						</h4>
-					</div>
-					<br>
-				</div>
-				<!--Favourites Div End-->
-			</div>
-		</div>
-		<!--Upper Half End-->
-		<!--Lower Half of Page-->
-		<div id="lower">
-			<div class="row full-width">
-				<!--Settings Div-->
-				<div class="col-2 text-center">
-					<!-- Trigger the Settings Modal -->
-					<div style="position: relative; top: 4em;">
-						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#settingsModal" id="settingsTrigger">
-							<i class="fas fa-cog" style="color: white;"></i>
-						</button>
-					</div>
-				</div>
-				<!--Settings Div End-->
-				<!--Ayah & Hadith Div-->
-				<div class="col-8 text-center">
-					<!--Ayat Start-->
-					<h4 id="ayah" class="text-color">
-					</h4>
-					<!--Ayat End-->
-					<hr class="text-color">
-					<!--Hadith Start-->
-					<h4 id="hadees" class="text-color">
-					</h4>
-					<!--Hadith End-->
-				</div>
-				<!--Ayah & Hadith Div End-->
-				<!--Todolist Div-->
-				<div class="col-2">
+            </div>
+            <!--Upper Left Half End-->
+            <!--Upper Center Half Start-->
+            <div class="col-8">
 
-				</div>
-				<!--Todolist Div End-->
-			</div>
-		</div>
-		<!--Lower Half End-->
-	</div>
+            </div>
+            <!--Upper Center Half End-->
+            <!--Upper Right Part Start-->
+            <div class="col-2">
+                <!--Time Div-->
+                <div class="row full-width">
+                    <div class="col-md-12 pull-right" id="timeDiv">
+                        <br>
+                        <h1 id="time" class="text-color"></h1>
+                    </div>
+                </div>
+                <!--Time Div End-->
+                <!--Date Div-->
+                <div class="row full-width">
+                    <div class="col-md-12 pull-right">
+                        <h4 id="date" class="text-color dateLocation"></h4>
+                    </div>
+                </div>
+                <!--Date Div End-->
+                <!--Favourites Div-->
+                <div class="row full-width" id="favouritesDiv">
+                    <div class="col-md-12 pull-right" id="favoritesDiv">
+                        <h2 class="text-color text-right">
+                            Favourites
+                        </h2>
+                        <hr align="right" class="text-color" id="favouritesHr">
+                        <div>
+                            <h4>
+                                <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
+                                </ol>
+                            </h4>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <!--Favourites Div End-->
+            </div>
+            <!--Upper Right Part End-->
+        </div>
+    </div>
+    <!--Upper Half End-->
+    <!--Lower Half of Page-->
+    <div id="lower">
+        <div class="row full-width">
+            <!--Settings Div-->
+            <div class="col-2 text-center">
+                <!-- Trigger the Settings Modal -->
+                <div style="position: relative; top: 4em;">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#settingsModal"
+                            id="settingsTrigger">
+                        <i class="fas fa-cog" style="color: white;"></i>
+                    </button>
+                </div>
+            </div>
+            <!--Settings Div End-->
+            <!--Ayah & Hadith Div-->
+            <div class="col-8 text-center">
+                <!--Ayat Start-->
+                <h4 id="ayah" class="text-color">
+                </h4>
+                <!--Ayat End-->
+                <hr class="text-color">
+                <!--Hadith Start-->
+                <h4 id="hadees" class="text-color">
+                </h4>
+                <!--Hadith End-->
+            </div>
+            <!--Ayah & Hadith Div End-->
+            <!--Todolist Div-->
+            <div class="col-2">
 
-	<!--Settings Modal -->
-	<div id="settingsModal" class="modal fade" role="dialog" style="overflow: auto">
-		<div class="modal-dialog">
+            </div>
+            <!--Todolist Div End-->
+        </div>
+    </div>
+    <!--Lower Half End-->
+</div>
 
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Settings</h4>
-				</div>
-				<div class="modal-body">
-					<table class="table ">
-						<tbody>
-						<tr>
-							<td>
-								24 Hours Format
-							</td>
-							<td>
-								<input type='checkbox' id='isSelected24'/>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								Hide Favourites
-							</td>
-							<td>
-								<input type='checkbox' id='displayFavourites'/>
-							</td>
-						</tr>
-						<tr>
+<!--Settings Modal -->
+<div id="settingsModal" class="modal fade" role="dialog" style="overflow: auto">
+    <div class="modal-dialog">
 
-						</tr>
-						</tbody>
-					</table>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Settings</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table ">
+                    <tbody>
+                    <tr>
+                        <td>
+                            24 Hours Format
+                        </td>
+                        <td>
+                            <input type='checkbox' id='isSelected24'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Hide Favourites
+                        </td>
+                        <td>
+                            <input type='checkbox' id='displayFavourites'/>
+                        </td>
+                    </tr>
+                    <tr>
 
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
+                    </tr>
+                    </tbody>
+                </table>
 
-		</div>
-	</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
 
-	<script src="js/app.js"></script>
+    </div>
+</div>
 
-	</body>
+<script src="js/app.js"></script>
+
+</body>
 </html>
 

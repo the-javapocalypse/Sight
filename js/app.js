@@ -122,7 +122,8 @@
 
     // Hadiths
     var hadiths = [
-        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan al-Tirmidhī 1924)'
+        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan Abi Dawud Book 43, Hadith 169)',
+        'A Muslim is the one from whose tongue and hands the Muslims are safe. (Riyad as-Salihin Book 1, Hadith 211)'
     ];
 
     //Background Image Links
