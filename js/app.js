@@ -26,6 +26,20 @@
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
 
+    var todos = [
+        'Todo 111111111111111111111111111111111111111111111111111111111111111',
+        'Todo 2',
+        'Todo 3',
+        'Todo 4',
+        'Todo 5',
+        'Todo 6',
+        'Todo 7',
+        'Todo 8',
+        'Todo 9',
+    ];
+
+    // populateTodos(todos);
+
     // Quranic Verses
     var verses = [
         'And He found you lost and guided [you]. (93:7)',
@@ -628,13 +642,12 @@
             var li = ol.appendChild(document.createElement('li'));
             // add class for padding
             li.className = "p5";
-
+            // Add favicons for websites
             var _img = document.createElement('img');
             _img.src = "https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
             _img.id = "foo" + i;
             _img.className = "liFavicon";
             li.appendChild(_img);
-
             // create anchor element
             var a = li.appendChild(document.createElement('a'));
             // add class to remove anchor default styling
@@ -648,6 +661,7 @@
             a.appendChild(document.createTextNode(title));
         }
     }
+
 
     // Open the link in a new tab of the current window.
     // Not useful but well.. Might come in handy
@@ -692,9 +706,85 @@
         return true;
     }
 
+
+    populateTodos(todos);
+
+    function populateTodos(todo){
+        // get the list
+        var ol = document.getElementById('todoList');
+
+        for (var i = 0; i < todo.length; i++) {
+            var li = document.createElement("li");
+            var p = document.createElement("p");
+            p.innerHTML = todo[i];
+            p.className = "text-color";
+            li.appendChild(p);
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+            ol.appendChild(li);
+        }
+    }
+
     //Test Javascript Start
 
+// Create a "close" button and append it to each list item
+//     var myNodelist = document.getElementsByTagName("LI");
+//     var i;
+//     for (i = 0; i < myNodelist.length; i++) {
+//         var span = document.createElement("SPAN");
+//         var txt = document.createTextNode("\u00D7");
+//         span.className = "close";
+//         span.appendChild(txt);
+//         myNodelist[i].appendChild(span);
+//     }
 
+// Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+// Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function(ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+    }, false);
+
+// Create a new list item when clicking on the "Add" button
+    function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("todoList").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+    }
     //Test JavaScript End
 
 })();
