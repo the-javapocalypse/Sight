@@ -12,6 +12,7 @@
           Local Image loads before the actual image. Replace it by sight logo maybe?
           On clicking todo, it is not checked everytime
           add todos on pressing enter
+          Scroll in todos works after page refreshes
      */
 
     /*
