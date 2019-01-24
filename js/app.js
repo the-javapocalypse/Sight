@@ -706,24 +706,34 @@
     }
 
     function readTodos(){
+        var data = [];
         chrome.storage.sync.get(['todoSight1'], function(result) {
             if(Object.entries(result).length != 0){
                 console.log(1);
-                var data = Object.keys(result).map(function(key) {
-                    return [Number(key), result[key]];
-                });
-                console.log(data[0][1]);
-                return data;
+                // var data = Object.keys(result).map(function(key) {
+                //     return [Number(key), result[key]];
+                // });
+                // console.log(data[0][1]);
+
+                // const data = Object.keys(result).map(i => result[i]);
+                // console.log(data);
+                for (var key in result) {
+                    var temp = result[key].replace(/'/g, '"');
+                    temp = JSON.parse(temp);
+                    data.push(temp);
+                }
             }else{
                 console.log(2);
-                return [];
             }
         });
+        return data;
     }
 
     // chrome.storage.sync.get(['todoSight1'], function(result) {
     //     console.log(result);
     // });
+
+    console.log(readTodos().slice());
 
     todos = readTodos();
     if (todos == null){
