@@ -745,15 +745,25 @@
             if (ev.target.tagName === 'LI') {
                 ev.target.classList.toggle('checked');
                 console.log('Checked');
-                //for all <li> with class "02"
+                //for all <li> with class "checked" & "hide"
                 $('li.checked').each(function(element) {
-                    console.log(this.innerHTML);
+                    console.log(this.innerText);
                 });
                 $('li.hide').each(function(element) {
-                    console.log(this.innerHTML);
+                    console.log(this.innerText);
                 });
             }
         }, false);
+    }
+    
+    
+    function updateTodos() {
+        /*
+        Logic:
+        Read Todos from local storage
+        Add/Remove Todos
+        Overwrite Local storage
+         */
     }
 
     //Test Javascript Start
@@ -817,3 +827,30 @@
     //Test JavaScript End
 
 })();
+
+
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        document.getElementById("todoList").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+}
