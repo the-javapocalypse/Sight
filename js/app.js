@@ -27,17 +27,7 @@
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
 
-    var todos = [
-        'Todo 111111111111111111111111111111111111111111111111111111111111111',
-        'Todo 2',
-        'Todo 3',
-        'Todo 4',
-        'Todo 5',
-        'Todo 6',
-        'Todo 7',
-        'Todo 8',
-        'Todo 9',
-    ];
+    var todos = [];
 
     // populateTodos(todos);
 
@@ -708,54 +698,84 @@
     }
 
 
+    function writeTodos(data){
+        data = JSON.stringify(data);
+        chrome.storage.sync.set({'todoSight1': data}, function() {
+            console.log('Value is set to ' + data);
+        })
+    }
+
+    function readTodos(){
+        chrome.storage.sync.get(['todoSight1'], function(result) {
+            if(Object.entries(result).length != 0){
+                console.log(1);
+                var data = Object.keys(result).map(function(key) {
+                    return [Number(key), result[key]];
+                });
+                console.log(data[0][1]);
+                return data;
+            }else{
+                console.log(2);
+                return [];
+            }
+        });
+    }
+
+    // chrome.storage.sync.get(['todoSight1'], function(result) {
+    //     console.log(result);
+    // });
+
+    todos = readTodos();
+    if (todos == null){
+        todos = [];
+    }
+    console.log(todos);
+
     populateTodos(todos);
 
     function populateTodos(todo){
-        // get the list
-        var ol = document.getElementById('todoList');
 
-        for (var i = 0; i < todo.length; i++) {
-            var li = document.createElement("li");
-            var p = document.createElement("p");
-            p.innerHTML = todo[i];
-            p.className = "text-color";
-            li.appendChild(p);
-            var span = document.createElement("SPAN");
-            var txt = document.createTextNode("\u00D7");
-            span.className = "close";
-            span.appendChild(txt);
-            li.appendChild(span);
-            ol.appendChild(li);
+        try{
+            $("#todoList").empty();
+
+            // get the list
+            var ol = document.getElementById('todoList');
+
+            for (var i = 0; i < todo.length; i++) {
+                var li = document.createElement("li");
+                var p = document.createElement("p");
+                p.innerHTML = todo[i];
+                p.className = "text-color";
+                li.appendChild(p);
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+                ol.appendChild(li);
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    // div.style.display = "none";
+                    div.className = "hide";
+                    // let index_remove = div.innerText.split("\u00D7")[0];
+                    todos.splice( todos.indexOf(div.innerText.split("\u00D7")[0]) , 1);
+                    populateTodos(todos);
+                    writeTodos(todos);
+                }
+            }
+        }catch (e) {
+
         }
 
-        // Click on a close button to hide the current list item
-        var close = document.getElementsByClassName("close");
-        var i;
-        for (i = 0; i < close.length; i++) {
-            close[i].onclick = function() {
-                var div = this.parentElement;
-                // div.style.display = "none";
-                div.className = "hide";
-            }
-        }
-
-// Add a "checked" symbol when clicking on a list item
-        var list = document.querySelector('ul');
-        list.addEventListener('click', function(ev) {
-            if (ev.target.tagName === 'LI') {
-                ev.target.classList.toggle('checked');
-                console.log('Checked');
-                //for all <li> with class "checked" & "hide"
-                $('li.checked').each(function(element) {
-                    console.log(this.innerText);
-                });
-                $('li.hide').each(function(element) {
-                    console.log(this.innerText);
-                });
-            }
-        }, false);
     }
-    
+
+
     
     function updateTodos() {
         /*
@@ -768,69 +788,18 @@
 
     //Test Javascript Start
 
-// Create a "close" button and append it to each list item
-//     var myNodelist = document.getElementsByTagName("LI");
-//     var i;
-//     for (i = 0; i < myNodelist.length; i++) {
-//         var span = document.createElement("SPAN");
-//         var txt = document.createTextNode("\u00D7");
-//         span.className = "close";
-//         span.appendChild(txt);
-//         myNodelist[i].appendChild(span);
-//     }
 
-// // Click on a close button to hide the current list item
-//     var close = document.getElementsByClassName("close");
-//     var i;
-//     for (i = 0; i < close.length; i++) {
-//         close[i].onclick = function() {
-//             var div = this.parentElement;
-//             div.style.display = "none";
-//         }
-//     }
-//
-// // Add a "checked" symbol when clicking on a list item
-//     var list = document.querySelector('ul');
-//     list.addEventListener('click', function(ev) {
-//         if (ev.target.tagName === 'LI') {
-//             ev.target.classList.toggle('checked');
-//             console.log('Checked');
-//         }
-//     }, false);
-
-// Create a new list item when clicking on the "Add" button
-//     function newElement() {
-//         var li = document.createElement("li");
-//         var inputValue = document.getElementById("myInput").value;
-//         var t = document.createTextNode(inputValue);
-//         li.appendChild(t);
-//         if (inputValue === '') {
-//             alert("You must write something!");
-//         } else {
-//             document.getElementById("todoList").appendChild(li);
-//         }
-//         document.getElementById("myInput").value = "";
-//
-//         var span = document.createElement("SPAN");
-//         var txt = document.createTextNode("\u00D7");
-//         span.className = "close";
-//         span.appendChild(txt);
-//         li.appendChild(span);
-//
-//         for (i = 0; i < close.length; i++) {
-//             close[i].onclick = function() {
-//                 var div = this.parentElement;
-//                 div.style.display = "none";
-//             }
-//         }
-//     }
     document.getElementById("addTodo").addEventListener("click", newTodo);
     function newTodo() {
         var inputValue = document.getElementById("todoInput").value;
         if (inputValue === '') {
             alert("You must write something!");
         } else {
-            alert(inputValue);
+            // alert(inputValue);
+            todos.push(inputValue);
+            populateTodos(todos);
+            document.getElementById("todoInput").value = '';
+            writeTodos(todos);
         }
     }
     //Test JavaScript End
