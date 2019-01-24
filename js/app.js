@@ -11,6 +11,7 @@
     Bugs: Time at 12:xx when in 12 hours format shows 00:xx
           Local Image loads before the actual image. Replace it by sight logo maybe?
           On clicking todo, it is not checked everytime
+          add todos on pressing enter
      */
 
     /*
@@ -539,10 +540,8 @@
         const link = checkImage(
             backgrounds[idx]
         ).then(result => {
-            console.log('U1');
             bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
         }, err => {
-            console.log('E1');
             bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
         });
 
@@ -698,6 +697,7 @@
     }
 
 
+    // Method to write todos in local sync storage
     function writeTodos(data){
         data = JSON.stringify(data);
         chrome.storage.sync.set({'todoSight1': data}, function() {
@@ -705,43 +705,27 @@
         })
     }
 
+    // Method to read todos.
     function readTodos(){
-        var data = [];
         chrome.storage.sync.get(['todoSight1'], function(result) {
             if(Object.entries(result).length != 0){
-                console.log(1);
-                // var data = Object.keys(result).map(function(key) {
-                //     return [Number(key), result[key]];
-                // });
-                // console.log(data[0][1]);
-
-                // const data = Object.keys(result).map(i => result[i]);
-                // console.log(data);
                 for (var key in result) {
                     var temp = result[key].replace(/'/g, '"');
                     temp = JSON.parse(temp);
-                    data.push(temp);
+                    todos = temp;
+                    populateTodos(todos);
                 }
             }else{
-                console.log(2);
             }
         });
-        return data;
     }
 
-    // chrome.storage.sync.get(['todoSight1'], function(result) {
-    //     console.log(result);
-    // });
 
-    console.log(readTodos().slice());
+    // Read todos, if there are todos already stored in the local storage
+    readTodos();
 
-    todos = readTodos();
-    if (todos == null){
-        todos = [];
-    }
-    console.log(todos);
-
-    populateTodos(todos);
+    // Populate Todos
+    // populateTodos(todos);
 
     function populateTodos(todo){
 
@@ -813,6 +797,9 @@
         }
     }
     //Test JavaScript End
+
+    // console.log('deleting');
+    // chrome.storage.sync.clear();
 
 })();
 
