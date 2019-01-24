@@ -696,6 +696,38 @@
         return true;
     }
 
+///////////////////////////////////////////////////////////////////////
+///////////////////////    TODOS  START   /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+    // Read todos, if there are todos already stored in the local storage
+    readTodos();
+
+
+
+    // Create and add event listener to add todos button
+    document.getElementById("addTodo").addEventListener("click", newTodo);
+    function newTodo() {
+        var inputValue = document.getElementById("todoInput").value;
+        // if input is empty
+        if (inputValue === '') {
+            // Disable button maybe?
+            alert("You must write something!");
+        } else {
+            // Push new todo to array
+            todos.push(inputValue);
+            // Update Todos UI
+            populateTodos(todos);
+            // Reset input's value
+            document.getElementById("todoInput").value = '';
+            // Update todos in local storage
+            writeTodos(todos);
+        }
+    }
+
+
 
     // Method to write todos in local sync storage
     function writeTodos(data){
@@ -705,7 +737,9 @@
         })
     }
 
-    // Method to read todos.
+
+
+    // Method to read todos from local storage
     function readTodos(){
         chrome.storage.sync.get(['todoSight1'], function(result) {
             if(Object.entries(result).length != 0){
@@ -721,31 +755,36 @@
     }
 
 
-    // Read todos, if there are todos already stored in the local storage
-    readTodos();
 
-    // Populate Todos
-    // populateTodos(todos);
-
+    // Method to populate Todos list. Generate and append li nodes
+    // Returns Nothing
+    // Update UI of todos
     function populateTodos(todo){
-
         try{
+            // Reset the todos list
             $("#todoList").empty();
 
             // get the list
             var ol = document.getElementById('todoList');
-
+            // Iterate over all todos
             for (var i = 0; i < todo.length; i++) {
+                // Create new li
                 var li = document.createElement("li");
+                // Create new p
                 var p = document.createElement("p");
+                // p = todo
                 p.innerHTML = todo[i];
+                // Assign class
                 p.className = "text-color";
+                // Append to list
                 li.appendChild(p);
+                // Create and append cancel sign
                 var span = document.createElement("SPAN");
                 var txt = document.createTextNode("\u00D7");
                 span.className = "close";
                 span.appendChild(txt);
                 li.appendChild(span);
+                // Finally append li to list
                 ol.appendChild(li);
             }
 
@@ -755,51 +794,29 @@
             for (i = 0; i < close.length; i++) {
                 close[i].onclick = function() {
                     var div = this.parentElement;
-                    // div.style.display = "none";
+                    // Hide the canceled item
                     div.className = "hide";
-                    // let index_remove = div.innerText.split("\u00D7")[0];
+                    // Remove canceled item for array
                     todos.splice( todos.indexOf(div.innerText.split("\u00D7")[0]) , 1);
+                    // Update Todos UI
                     populateTodos(todos);
+                    // Update todos in local storage
                     writeTodos(todos);
                 }
             }
         }catch (e) {
-
         }
-
     }
 
+///////////////////////////////////////////////////////////////////////
+/////////////////////////    TODOS  END   /////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
-    
-    function updateTodos() {
-        /*
-        Logic:
-        Read Todos from local storage
-        Add/Remove Todos
-        Overwrite Local storage
-         */
-    }
 
     //Test Javascript Start
 
 
-    document.getElementById("addTodo").addEventListener("click", newTodo);
-    function newTodo() {
-        var inputValue = document.getElementById("todoInput").value;
-        if (inputValue === '') {
-            alert("You must write something!");
-        } else {
-            // alert(inputValue);
-            todos.push(inputValue);
-            populateTodos(todos);
-            document.getElementById("todoInput").value = '';
-            writeTodos(todos);
-        }
-    }
     //Test JavaScript End
-
-    // console.log('deleting');
-    // chrome.storage.sync.clear();
 
 })();
 
