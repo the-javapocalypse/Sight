@@ -10,6 +10,9 @@
     /*
     Bugs: Time at 12:xx when in 12 hours format shows 00:xx
           Local Image loads before the actual image. Replace it by sight logo maybe?
+          On clicking todo, it is not checked everytime
+          add todos on pressing enter
+          Scroll in todos works after page refreshes
      */
 
     /*
@@ -25,6 +28,10 @@
     var ayahElem = document.getElementById('ayah');
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
+
+    var todos = [];
+
+    // populateTodos(todos);
 
     // Quranic Verses
     var verses = [
@@ -122,7 +129,8 @@
 
     // Hadiths
     var hadiths = [
-        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan al-Tirmidhī 1924)'
+        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan Abi Dawud Book 43, Hadith 169)',
+        'A Muslim is the one from whose tongue and hands the Muslims are safe. (Riyad as-Salihin Book 1, Hadith 211)'
     ];
 
     //Background Image Links
@@ -533,10 +541,8 @@
         const link = checkImage(
             backgrounds[idx]
         ).then(result => {
-            console.log('U1');
             bodyElem.style.backgroundImage = "url(" + backgrounds[idx] + ")";
         }, err => {
-            console.log('E1');
             bodyElem.style.backgroundImage = "url('../img/bg.jpeg')";
         });
 
@@ -627,13 +633,12 @@
             var li = ol.appendChild(document.createElement('li'));
             // add class for padding
             li.className = "p5";
-
+            // Add favicons for websites
             var _img = document.createElement('img');
             _img.src = "https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
             _img.id = "foo" + i;
             _img.className = "liFavicon";
             li.appendChild(_img);
-
             // create anchor element
             var a = li.appendChild(document.createElement('a'));
             // add class to remove anchor default styling
@@ -647,6 +652,7 @@
             a.appendChild(document.createTextNode(title));
         }
     }
+
 
     // Open the link in a new tab of the current window.
     // Not useful but well.. Might come in handy
@@ -676,6 +682,15 @@
 
     });
 
+    // Display/Hide Todos
+    $('#displayTodo').bind('change', function () {
+        if ($(this).is(':checked'))
+            $("#todoDiv").addClass('hide');
+        else
+            $("#todoDiv").removeClass('hide');
+
+    });
+
     // Check if image exists i.e if the image url is valid or not
     // Param: Image url
     // Returns Boolean
@@ -691,9 +706,132 @@
         return true;
     }
 
+///////////////////////////////////////////////////////////////////////
+///////////////////////    TODOS  START   /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+    // Read todos, if there are todos already stored in the local storage
+    readTodos();
+
+
+
+    // Create and add event listener to add todos button
+    document.getElementById("addTodo").addEventListener("click", newTodo);
+    function newTodo() {
+        var inputValue = document.getElementById("todoInput").value;
+        // if input is empty
+        if (inputValue === '') {
+            // Disable button maybe?
+            alert("You must write something!");
+        } else {
+            // Push new todo to array
+            todos.push(inputValue);
+            // Update Todos UI
+            populateTodos(todos);
+            // Reset input's value
+            document.getElementById("todoInput").value = '';
+            // Update todos in local storage
+            writeTodos(todos);
+        }
+    }
+
+
+
+    // Method to write todos in local sync storage
+    function writeTodos(data){
+        data = JSON.stringify(data);
+        chrome.storage.sync.set({'todoSight1': data}, function() {
+            console.log('Value is set to ' + data);
+        })
+    }
+
+
+
+    // Method to read todos from local storage
+    function readTodos(){
+        chrome.storage.sync.get(['todoSight1'], function(result) {
+            if(Object.entries(result).length != 0){
+                for (var key in result) {
+                    var temp = result[key].replace(/'/g, '"');
+                    temp = JSON.parse(temp);
+                    todos = temp;
+                    populateTodos(todos);
+                }
+            }else{
+            }
+        });
+    }
+
+
+
+    // Method to populate Todos list. Generate and append li nodes
+    // Returns Nothing
+    // Update UI of todos
+    function populateTodos(todo){
+        try{
+            // Reset the todos list
+            $("#todoList").empty();
+
+            // get the list
+            var ol = document.getElementById('todoList');
+            // Iterate over all todos
+            for (var i = 0; i < todo.length; i++) {
+                // Create new li
+                var li = document.createElement("li");
+                // Create new p
+                var p = document.createElement("p");
+                // p = todo
+                p.innerHTML = todo[i];
+                // Assign class
+                p.className = "text-color";
+                // Append to list
+                li.appendChild(p);
+                // Create and append cancel sign
+                var span = document.createElement("SPAN");
+                var txt = document.createTextNode("\u00D7");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+                // Finally append li to list
+                ol.appendChild(li);
+            }
+
+            // Click on a close button to hide the current list item
+            var close = document.getElementsByClassName("close");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
+                    var div = this.parentElement;
+                    // Hide the canceled item
+                    div.className = "hide";
+                    // Remove canceled item for array
+                    todos.splice( todos.indexOf(div.innerText.split("\u00D7")[0]) , 1);
+                    // Update Todos UI
+                    populateTodos(todos);
+                    // Update todos in local storage
+                    writeTodos(todos);
+                }
+            }
+        }catch (e) {
+        }
+    }
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////////    TODOS  END   /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
     //Test Javascript Start
 
 
     //Test JavaScript End
 
 })();
+
+
+$(function() {
+    $("#todoDiv").niceScroll();
+});
+
