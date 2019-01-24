@@ -681,6 +681,15 @@
 
     });
 
+    // Display/Hide Todos
+    $('#displayTodo').bind('change', function () {
+        if ($(this).is(':checked'))
+            $("#todoDiv").addClass('hide');
+        else
+            $("#todoDiv").removeClass('hide');
+
+    });
+
     // Check if image exists i.e if the image url is valid or not
     // Param: Image url
     // Returns Boolean
