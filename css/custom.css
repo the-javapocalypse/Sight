@@ -106,7 +106,7 @@ body {
 
 .dateLocation {
     position: relative;
-    top: -20px;
+    bottom: 0.5em;
 }
 
 #settingsTrigger {
@@ -145,7 +145,7 @@ body {
     padding: 0.6em 2em 0.4em 0.7em;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: 0.2s;
     /* make the list items unselectable */
     -webkit-user-select: none;
