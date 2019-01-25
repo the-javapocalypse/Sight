@@ -5,6 +5,7 @@
           Todo in local storage
           Execute scripts in background.js to load ahead of time
           Replace all CDNs with local files
+          icon credits: <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
      */
 
     /*
@@ -717,8 +718,24 @@
 
 
 
-    // Create and add event listener to add todos button
+    // Create and add event listener on add todos button
     document.getElementById("addTodo").addEventListener("click", newTodo);
+
+
+    // WHen user press Enter/Return, add new todo
+    document.getElementById('todoInput').onkeypress = function(e){
+        if (!e) e = window.event;
+        var keyCode = e.keyCode || e.which;
+        // If code of pressed key is 13, i.e, Enter is pressed
+        if (keyCode == '13'){
+            // Add todo
+            newTodo();
+        }
+    }
+
+    // Method to add new todo
+    // Returns Nothing
+    // Update Todos and add new todo
     function newTodo() {
         var inputValue = document.getElementById("todoInput").value;
         // if input is empty
@@ -817,6 +834,7 @@
         }catch (e) {
         }
     }
+
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////    TODOS  END   /////////////////////////////
