@@ -136,7 +136,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     // Hadiths
     var hadiths = [
-        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan Abi Dawud Book 43, Hadith 169)',
+        'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan Abi Dawud 43:169)',
         'A Muslim is the one from whose tongue and hands the Muslims are safe. (Riyad as-Salihin - 1.211)',
         'Every deen has an innate character. The character of Islam is modesty. (Al-Muwatta – 47.2.9)',
         'The best among you are the best in character. (Sahih Al-Bukhari - 73.61)',
@@ -145,15 +145,15 @@ Sahih Al-Bukhari – Book 48 Hadith 811
         'Whoever guarantees me (the chastity of) what is between his legs (i.e. his private parts), and what is between his jaws (i.e., his tongue), I guarantee him Paradise. (Sahih Al-Bukhari - 82.799)',
         'It is great treachery that you should tell your brother something and have him believe you when you are lying. (Sunan of Abu-Dawood - 41.4953)',
         'The signs of a hypocrite are three: Whenever he speaks, he tells a lie; and whenever he promises, he breaks his promise; and whenever he is entrusted, he betrays. (Sahih Al-Bukhari – 73.117',
-        'The seeking of knowledge is obligatory for every Muslim. (Al-Tirmidhi - 218)',
+        // 'The seeking of knowledge is obligatory for every Muslim. (Al-Tirmidhi - 218)',
         'None of you should wish for death because of a calamity befalling him; but if he has to wish for death, he should say: "O Allah! Keep me alive as long as life is better for me, and let me die if death is better for me." (Sahih Al-Bukhari - 70.575)',
         'A deceased will be raised in the clothes in which he died. (Sunan of Abu-Dawood - 20.3108)',
         'Allah will not be merciful to those who are not merciful to mankind. (Sahih Al-Bukhari - 73.42)',
         'By his good character, a believer will attain the degree of one who prays during the night and fasts during the day. (Sunan of Abu-Dawood - 41.4780)',
-        'He who abandons lying, having been false, will have a castle built for him just within Paradise. He who abandons disputing, having been speaking the truth, will have one built for him in the middle of Paradise. He whose character is good will have one built for him in the highest part of it. (Al-Tirmidhi - 4831)',
+        // 'He who abandons lying, having been false, will have a castle built for him just within Paradise. He who abandons disputing, having been speaking the truth, will have one built for him in the middle of Paradise. He whose character is good will have one built for him in the highest part of it. (Al-Tirmidhi - 4831)',
         'The strong-man is not one who wrestles well but the strong man is one who controls himself when he is in a fit of rage. (Sahih Muslim - 32.6313)',
         'Do not become angry and furious.(Sahih Bukhari - 73.137)',
-        'Shall I not show you the gates of goodness ? Fasting is a shield, charity extinguishes sin as water extinguishes fire; and the praying of a man in the depth of night. (An Nawawi - 29)',
+        // 'Shall I not show you the gates of goodness ? Fasting is a shield, charity extinguishes sin as water extinguishes fire; and the praying of a man in the depth of night. (An Nawawi - 29)',
         'Anger comes from the devil, the devil was created of fire, and fire is extinguished only with water; so when one of you becomes angry, he should perform ablution. (Abu Dawud - 36.4766)',
         'When one of you becomes angry while standing, he should sit down. If the anger leaves him, well and good; otherwise he should lie down. (Abu Dawud - 36.4764)',
         'He who believes in Allah and the Last Day should treat his neighbour with kindness and he who believes in Allah and the Last Day should show hospitality to his guest. (Sahih Muslim - 1:75)',
@@ -161,7 +161,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
         'A man never did a good deed but removed a thorny branch from the road; it was either in the tree and someone cut it and threw it on the road, or it was lying in it, he removed it. Allah accepted this good deed of his and brought him into Paradise. (Abu Dawud - 36:5225)',
         'No calamity befalls a Muslim but that Allah expiates some of his sins because of it, even though it were the prick he receives from a thorn. (Sahih Al-Bukhari - 70:544)',
         'Do not turn away a poor man, Aisha, even if all you can give is half a date. If you love the poor and bring them near you, Aisha, Allah will bring you near Him on the Day of Resurrection. (Al-Tirmidhi - 1376)',
-        'Do you know who will go first on the Day of Resurrection to the shade of Allah, Who is Great and Glorious? Those who when given what is right accept it, when asked for something give freely, and who judge in favour of others as they do for themselves. (Al-Tirmidhi - 3711)',
+        // 'Do you know who will go first on the Day of Resurrection to the shade of Allah, Who is Great and Glorious? Those who when given what is right accept it, when asked for something give freely, and who judge in favour of others as they do for themselves. (Al-Tirmidhi - 3711)',
         'Allah\'s Messenger (PBUH) said, "When Allah decreed the Creation, He pledged Himself by writing in His book which is laid down with Him: My mercy prevails over my wrath." (Hadith Qudsi: 1)',
         'Allah\'s Messenger (PBUH) said, "Allah, the Exalted and Glorious, said, ‘The son of Adam abuses Dahr (the time), whereas I am Dahr since in My hand are the day and the night.‘ " (Hadith Qudsi: 4)',
         'Prophet (PBUH) said, “Allah says: ‘I am the Most Self-Sufficient and I have no need for an associate. Thus he who does an action for someone else’s sake as well as Mine will have that action renounced by Me to him whom he associated with Me.’ ” (Hadith Qudsi: 5)',
@@ -607,7 +607,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     dateElem.innerHTML = getDate();
 
     // Set hadith
-    hadeesElem.innerHTML = hadiths[ hadiths.length - 1 ];
+    hadeesElem.innerHTML = hadiths[ idx ];
 
     // Method to calculate and format time
     // Returns a string containing time
