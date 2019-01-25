@@ -717,14 +717,27 @@
 
 
 
-    // Create and add event listener to add todos button
+    // Create and add event listener on clicking add todos button
     document.getElementById("addTodo").addEventListener("click", newTodo);
+
+    // Add todo when Enter/Return is pressed
+    document.getElementById('todoInput').onkeypress = function(e){
+        if (!e) e = window.event;
+        var keyCode = e.keyCode || e.which;
+        // IF the code of rpessed key is equals to Return Key
+        if (keyCode == '13'){
+            //Add New Todo
+            newTodo();
+        }
+    }
+
+    // Method to add new todo
     function newTodo() {
         var inputValue = document.getElementById("todoInput").value;
         // if input is empty
         if (inputValue === '') {
             // Disable button maybe?
-            alert("You must write something!");
+            alertify.error('Todo is Empty');
         } else {
             // Push new todo to array
             todos.push(inputValue);
@@ -833,5 +846,6 @@
 
 $(function() {
     $("#todoDiv").niceScroll();
+
 });
 

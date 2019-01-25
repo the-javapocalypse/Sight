@@ -41,11 +41,11 @@ body {
         height: 20vh;
     }
 
-    #favoritesDiv{
+    #favoritesDiv {
         padding-top: 6em;
     }
 
-    #timeDiv{
+    #timeDiv {
         padding-top: 3em;
     }
 
@@ -65,7 +65,7 @@ body {
     text-shadow: 5px 2px 15px #000000;
 }
 
-#favouritesHr{
+#favouritesHr {
     max-width: 10em;
     margin-top: 0;
 }
@@ -112,15 +112,12 @@ body {
     outline: none;
 }
 
-
 #todoDiv {
     box-sizing: border-box;
     overflow-y: scroll;
     max-height: 75vh;
+    width: 100%;
 }
-
-
-
 
 /* Remove margins and padding from the list */
 #todoDiv ul {
@@ -131,12 +128,13 @@ body {
 
 /* Style the list items */
 #todoDiv ul li {
+    text-align: left;
     max-width: 100%;
-    word-break:break-all;
+    word-break: break-all;
     cursor: pointer;
     position: relative;
-    padding: 12px 2em 12px 2em;
-    background: rgba(0,0,0,0.5);
+    padding: 0.6em 2em 0.4em 0.7em;
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 1.2em;
     transition: 0.2s;
@@ -147,16 +145,15 @@ body {
     user-select: none;
 }
 
-
 /* Darker background-color on hover */
 #todoDiv ul li:hover {
-    background: rgba(0,0,0,1);
+    background: rgba(0, 0, 0, 1);
     color: #000000;
 }
 
 /* When clicked on, add a background color and strike out text */
 #todoDiv ul li.checked {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     color: #000000;
     text-decoration: line-through;
 }
@@ -175,7 +172,6 @@ body {
     width: 7px;
 }
 
-
 /* Style the close button */
 .close {
     position: absolute;
@@ -192,13 +188,14 @@ body {
 
 /* Style the header */
 .header {
-    background: rgba(0,0,0,0.5);
-    padding: 0.5em 2em 1em 2em;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5em 1em 1em 1em;
     color: white;
     text-align: center;
 }
 
-.header h2{
+.header h2 {
+    padding-top: 0.3em;
     padding-bottom: 0.3em;
 }
 
@@ -234,4 +231,17 @@ input {
 
 .addBtn:hover {
     background-color: #bbb;
+}
+
+#upperLeftDiv {
+    padding-left: 0;
+    padding-right: 0;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+}
+
+.p-m-0 {
+    padding: 0;
+    margin: 0;
 }
