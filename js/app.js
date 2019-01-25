@@ -761,6 +761,7 @@
             // Update todos in local storage
             writeTodos(todos);
         }
+        alertify.message('New Task Added');
     }
 
 
@@ -769,7 +770,7 @@
     function writeTodos(data){
         data = JSON.stringify(data);
         chrome.storage.sync.set({'todoSight1': data}, function() {
-            console.log('Value is set to ' + data);
+            console.log('Added');
         })
     }
 
@@ -838,6 +839,7 @@
                     populateTodos(todos);
                     // Update todos in local storage
                     writeTodos(todos);
+                    alertify.message('Task Completed &#10004;');
                 }
             }
         }catch (e) {
