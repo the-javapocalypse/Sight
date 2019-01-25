@@ -667,28 +667,38 @@
 
     // Toggle time between 12 hours and 24 hours format
     $('#isSelected24').bind('change', function () {
-        if ($(this).is(':checked'))
-            timeElem.innerHTML = getTime(0);
+        if ($(this).is(':checked')){
+            $("#timeDiv").fadeOut("slow", function () {
+                timeElem.innerHTML = getTime(0);
+            });
+            $("#timeDiv").fadeIn("slow");
+        }
+
         else
-            timeElem.innerHTML = getTime(1);
+        {
+            $("#timeDiv").fadeOut("slow", function () {
+                timeElem.innerHTML = getTime(1);
+            });
+            $("#timeDiv").fadeIn("slow");
+        }
 
     });
 
     // Display/Hide Favourites
     $('#displayFavourites').bind('change', function () {
         if ($(this).is(':checked'))
-            $("#favouritesDiv").addClass('hide');
+            $("#favouritesDiv").fadeIn("slow");
         else
-            $("#favouritesDiv").removeClass('hide');
+            $("#favouritesDiv").fadeOut("slow");
 
     });
 
     // Display/Hide Todos
     $('#displayTodo').bind('change', function () {
         if ($(this).is(':checked'))
-            $("#todoDiv").addClass('hide');
+            $("#todoDiv").fadeIn("slow");
         else
-            $("#todoDiv").removeClass('hide');
+            $("#todoDiv").fadeOut("slow");
 
     });
 

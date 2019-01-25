@@ -136,48 +136,88 @@
                 <h4 class="modal-title">Settings</h4>
             </div>
             <div class="modal-body">
-                <table class="table ">
-                    <tbody>
-                    <tr>
-                        <td >
-                            24 Hours Format
-                        </td>
-                        <td>
-                            <!--<input type='checkbox' id='isSelected24'/>-->
-                            <div class="material-switch">
-                                <input id="isSelected24" type="checkbox"/>
-                                <label for="isSelected24" class="label-success"></label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Hide Favourites
-                        </td>
-                        <td>
-                            <!--<input type='checkbox' id='displayFavourites'/>-->
-                            <div class="material-switch">
-                                <input id="displayFavourites" type="checkbox"/>
-                                <label for="displayFavourites" class="label-success"></label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Hide Todos
-                        </td>
-                        <td>
-                            <div class="material-switch">
-                                <input id="displayTodo" type="checkbox"/>
-                                <label for="displayTodo" class="label-success"></label>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
+                <!--<table class="table ">-->
+                    <!--<tbody>-->
+                    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<td >&ndash;&gt;-->
+                            <!--&lt;!&ndash;24 Hours Format&ndash;&gt;-->
+                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<td>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;<input type='checkbox' id='isSelected24'/>&ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="material-switch">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<input id="isSelected24" type="checkbox"/>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<label for="isSelected24" class="label-success"></label>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--Hide Favourites-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--&lt;!&ndash;<input type='checkbox' id='displayFavourites'/>&ndash;&gt;-->
+                            <!--<div class="material-switch">-->
+                                <!--<input id="displayFavourites" type="checkbox"/>-->
+                                <!--<label for="displayFavourites" class="label-success"></label>-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>-->
+                            <!--Hide Todos-->
+                        <!--</td>-->
+                        <!--<td>-->
+                            <!--<div class="material-switch">-->
+                                <!--<input id="displayTodo" type="checkbox"/>-->
+                                <!--<label for="displayTodo" class="label-success"></label>-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
 
-                    </tr>
-                    </tbody>
-                </table>
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+
+                <div class="row">
+                    <div class="col-5 col-offset-2 text-center">
+                        <h4>24 Hours Format</h4>
+                    </div>
+                    <div class="col-4">
+                        <div class="material-switch" style="position: relative; top: 0.6em">
+                            <input id="isSelected24" type="checkbox"/>
+                            <label for="isSelected24" class="label-success"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="customHr">
+
+                <div class="row">
+                    <div class="col-5 col-offset-2 text-center">
+                        <h4>Favourites</h4>
+                    </div>
+                    <div class="col-4">
+                        <div class="material-switch" style="position: relative; top: 0.6em">
+                            <input id="displayFavourites" type="checkbox" checked/>
+                            <label for="displayFavourites" class="label-success"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="customHr">
+
+                <div class="row">
+                    <div class="col-5 col-offset-2 text-center">
+                        <h4>Todos</h4>
+                    </div>
+                    <div class="col-4">
+                        <div class="material-switch" style="position: relative; top: 0.6em">
+                            <input id="displayTodo" type="checkbox" checked/>
+                            <label for="displayTodo" class="label-success"></label>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <div class="modal-footer">
