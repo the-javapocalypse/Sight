@@ -128,10 +128,52 @@
         "He knows what is within the heavens and earth and knows what you conceal and what you declare. And Allah is Knowing of that within the breasts. (64:4)"
     ];
 
+
+    /*
+    said, ‘Allah will admit into paradise any Muslim whose good character is attested by four persons.’ We asked the Prophet, ‘If there were three witnesses only?’ He said, ‘Even three.’ We asked, ‘If there were two only?’ He said, ‘Even two.’ But we did not ask him about one witness.”
+Sahih Al-Bukhari – Book 48 Hadith 811
+     */
+
     // Hadiths
     var hadiths = [
         'Those who are merciful will be shown mercy by the Most Merciful. Be merciful to those on the earth and the One in the heavens will have mercy upon you. (Sunan Abi Dawud Book 43, Hadith 169)',
-        'A Muslim is the one from whose tongue and hands the Muslims are safe. (Riyad as-Salihin Book 1, Hadith 211)'
+        'A Muslim is the one from whose tongue and hands the Muslims are safe. (Riyad as-Salihin - 1.211)',
+        'Every deen has an innate character. The character of Islam is modesty. (Al-Muwatta – 47.2.9)',
+        'The best among you are the best in character. (Sahih Al-Bukhari - 73.61)',
+        'Nobody can be given a blessing better and greater than patience. (Sahih Al-Bukhari - 24.548)',
+        'The real patience is at the first stroke of a calamity. (Sahih Al-Bukhari - 23.372)',
+        'Whoever guarantees me (the chastity of) what is between his legs (i.e. his private parts), and what is between his jaws (i.e., his tongue), I guarantee him Paradise. (Sahih Al-Bukhari - 82.799)',
+        'It is great treachery that you should tell your brother something and have him believe you when you are lying. (Sunan of Abu-Dawood - 41.4953)',
+        'The signs of a hypocrite are three: Whenever he speaks, he tells a lie; and whenever he promises, he breaks his promise; and whenever he is entrusted, he betrays. (Sahih Al-Bukhari – 73.117',
+        'The seeking of knowledge is obligatory for every Muslim. (Al-Tirmidhi - 218)',
+        'None of you should wish for death because of a calamity befalling him; but if he has to wish for death, he should say: "O Allah! Keep me alive as long as life is better for me, and let me die if death is better for me." (Sahih Al-Bukhari - 70.575)',
+        'A deceased will be raised in the clothes in which he died. (Sunan of Abu-Dawood - 20.3108)',
+        'Allah will not be merciful to those who are not merciful to mankind. (Sahih Al-Bukhari - 73.42)',
+        'By his good character, a believer will attain the degree of one who prays during the night and fasts during the day. (Sunan of Abu-Dawood - 41.4780)',
+        'He who abandons lying, having been false, will have a castle built for him just within Paradise. He who abandons disputing, having been speaking the truth, will have one built for him in the middle of Paradise. He whose character is good will have one built for him in the highest part of it. (Al-Tirmidhi - 4831)',
+        'The strong-man is not one who wrestles well but the strong man is one who controls himself when he is in a fit of rage. (Sahih Muslim - 32.6313)',
+        'Do not become angry and furious.(Sahih Bukhari - 73.137)',
+        'Shall I not show you the gates of goodness ? Fasting is a shield, charity extinguishes sin as water extinguishes fire; and the praying of a man in the depth of night. (An Nawawi - 29)',
+        'Anger comes from the devil, the devil was created of fire, and fire is extinguished only with water; so when one of you becomes angry, he should perform ablution. (Abu Dawud - 36.4766)',
+        'When one of you becomes angry while standing, he should sit down. If the anger leaves him, well and good; otherwise he should lie down. (Abu Dawud - 36.4764)',
+        'He who believes in Allah and the Last Day should treat his neighbour with kindness and he who believes in Allah and the Last Day should show hospitality to his guest. (Sahih Muslim - 1:75)',
+        'He who believes in Allah and the Last Day should either utter good words or better keep silence. (Sahih Muslim - 1:75)',
+        'A man never did a good deed but removed a thorny branch from the road; it was either in the tree and someone cut it and threw it on the road, or it was lying in it, he removed it. Allah accepted this good deed of his and brought him into Paradise. (Abu Dawud - 36:5225)',
+        'No calamity befalls a Muslim but that Allah expiates some of his sins because of it, even though it were the prick he receives from a thorn. (Sahih Al-Bukhari - 70:544)',
+        'Do not turn away a poor man, Aisha, even if all you can give is half a date. If you love the poor and bring them near you, Aisha, Allah will bring you near Him on the Day of Resurrection. (Al-Tirmidhi - 1376)',
+        'Do you know who will go first on the Day of Resurrection to the shade of Allah, Who is Great and Glorious? Those who when given what is right accept it, when asked for something give freely, and who judge in favour of others as they do for themselves. (Al-Tirmidhi - 3711)',
+        'Allah\'s Messenger (PBUH) said, "When Allah decreed the Creation, He pledged Himself by writing in His book which is laid down with Him: My mercy prevails over my wrath." (Hadith Qudsi: 1)',
+        'Allah\'s Messenger (PBUH) said, "Allah, the Exalted and Glorious, said, ‘The son of Adam abuses Dahr (the time), whereas I am Dahr since in My hand are the day and the night.‘ " (Hadith Qudsi: 4)',
+        'Prophet (PBUH) said, “Allah says: ‘I am the Most Self-Sufficient and I have no need for an associate. Thus he who does an action for someone else’s sake as well as Mine will have that action renounced by Me to him whom he associated with Me.’ ” (Hadith Qudsi: 5)',
+        'Allah\'s Messenger (PBUH) said, "Allah, the Exalted and Glorious, said, ‘Spend (on charity), O son of Adam, and I shall spend on you.‘ " (Hadith Qudsi: 11)',
+        'Allah\'s Messenger (PBUH) said, "Allah, the Exalted and Glorious, said, ‘Pride is my cloak and greatness My robe, and he who competes with Me in respect of either of them I shall cast into Hell-fire.‘ " (Hadith Qudsi: 19)',
+        'Allah\'s Messenger (PBUH) said, "The gates of Paradise will be opened on Mondays and on Thursdays, and every servant [of Allah] who associates nothing with Allah will be forgiven, except for the man who has a grudge against his brother. [About them] It will be said: Delay these two until they are reconciled; delay these two until they are reconciled." (Hadith Qudsi: 20)',
+        'Allah\'s Messenger (PBUH) said, "Allah SWT, said, ‘There are three [types of men] whose adversary I shall be on the Day of Resurrection: a man who has given his word by Me and has broken it; a man who has sold a free man and has consumed the price; and a man who has hired a workman, has exacted his due in full from him and has not given him his wage.‘ " (Hadith Qudsi: 21)',
+        'Allah\'s Messenger (PBUH) said, "Allah will say on the Day of Resurrection, ‘Where are those who love one another through My glory? Today I shall give them shade in My shade, it being a day when there is no shade but My shade.‘ " (Hadith Qudsi: 23)',
+        'Allah\'s Messenger (PBUH) said, "Allah SWT says, ‘My faithful servant\'s reward from Me, if I have taken to Me his best friend from amongst the inhabitants of the world and he has then borne it patiently for My sake, shall be nothing less than Paradise.‘ " (Hadith Qudsi: 29)',
+        'Allah\'s Messenger (PBUH) said, "Allah SWT says, ‘O son of Adam, so long as you call upon Me and ask of Me, I shall forgive you for what you have done, and I shall not mind. O son of Adam, were your sins to reach the clouds of the sky and were you then to ask forgiveness of Me, I would forgive you.‘ " (Hadith Qudsi: 34)',
+        'Allah\'s Messenger (PBUH) said, "Allah SWT says, ‘O son of Adam, were you to come to Me with sins nearly as great as the earth and were you then to face Me, ascribing no partner to Me, I would bring you forgiveness nearly as great at it.‘ " (Hadith Qudsi: 34)',
+        'Allah\'s Messenger (PBUH) said, "Our Lord (glorified and exalted be He) descends each night to the earth\'s sky when there remains the final third of the night, and He says, ‘Who is saying a prayer to Me that I may answer it? Who is asking something of Me that I may give it him? Who is asking forgiveness of Me that I may forgive him?‘" (Hadith Qudsi: 35)'
     ];
 
     //Background Image Links
@@ -565,7 +607,7 @@
     dateElem.innerHTML = getDate();
 
     // Set hadith
-    hadeesElem.innerHTML = hadiths[index];
+    hadeesElem.innerHTML = hadiths[ hadiths.length - 1 ];
 
     // Method to calculate and format time
     // Returns a string containing time
