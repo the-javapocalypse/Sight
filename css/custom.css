@@ -71,7 +71,7 @@ body {
 }
 
 #favouritesHr {
-    max-width: 10em;
+    max-width: 4em;
     margin-top: 0;
 }
 
@@ -110,7 +110,8 @@ body {
 }
 
 #settingsTrigger {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .btn:focus {
@@ -145,7 +146,7 @@ body {
     padding: 0.6em 2em 0.4em 0.7em;
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.01em;
     transition: 0.2s;
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -314,3 +315,4 @@ hr.customHr {
     background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
+

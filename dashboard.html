@@ -31,10 +31,10 @@
     <div id="upper" >
         <div class="row p-m-0" >
             <!--Upper Left Half Start-->
-            <div class="col-2" id="upperLeftDiv">
+            <div class="col-3" id="upperLeftDiv">
                 <div class="div " id="todoDiv" >
                     <div id="todoInputDiv" class="header">
-                        <h4 class="text-left" id="headerHeading">Things to do</h4>
+                        <h4 class="text-left text-muted" id="headerHeading">Things to do</h4>
                         <input type="text" id="todoInput" placeholder="Add Todo...">
                         <span id="addTodo" class="addBtn">Add</span>
                     </div>
@@ -45,12 +45,12 @@
             </div>
             <!--Upper Left Half End-->
             <!--Upper Center Half Start-->
-            <div class="col-8">
+            <div class="col-6">
 
             </div>
             <!--Upper Center Half End-->
             <!--Upper Right Part Start-->
-            <div class="col-2">
+            <div class="col-3">
                 <!--Time Div-->
                 <div class="row full-width">
                     <div class="col-md-12 pull-right" id="timeDiv">
@@ -69,15 +69,15 @@
                 <!--Favourites Div-->
                 <div class="row full-width" id="favouritesDiv">
                     <div class="col-md-12 pull-right" id="favoritesDiv">
-                        <h2 class="text-color text-right">
+                        <h3 class="text-color text-right">
                             Favourites
-                        </h2>
+                        </h3>
                         <hr align="right" class="text-color" id="favouritesHr">
                         <div>
-                            <h4>
+                            <p>
                                 <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
                                 </ol>
-                            </h4>
+                            </p>
                         </div>
                         <br>
                     </div>
@@ -131,61 +131,16 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header modalFonts" id="modalHeader">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Settings</h4>
             </div>
-            <div class="modal-body">
-                <!--<table class="table ">-->
-                    <!--<tbody>-->
-                    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<td >&ndash;&gt;-->
-                            <!--&lt;!&ndash;24 Hours Format&ndash;&gt;-->
-                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<td>&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<input type='checkbox' id='isSelected24'/>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="material-switch">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<input id="isSelected24" type="checkbox"/>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<label for="isSelected24" class="label-success"></label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-                    <!--<tr>-->
-                        <!--<td>-->
-                            <!--Hide Favourites-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--&lt;!&ndash;<input type='checkbox' id='displayFavourites'/>&ndash;&gt;-->
-                            <!--<div class="material-switch">-->
-                                <!--<input id="displayFavourites" type="checkbox"/>-->
-                                <!--<label for="displayFavourites" class="label-success"></label>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                        <!--<td>-->
-                            <!--Hide Todos-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--<div class="material-switch">-->
-                                <!--<input id="displayTodo" type="checkbox"/>-->
-                                <!--<label for="displayTodo" class="label-success"></label>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-
-
-
+            <div class="modal-body modalFonts" id="modalBody">
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
+                    <div class="col-4 col-offset-2 text-right">
                         <h4>24 Hours Format</h4>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 col-offset-1">
                         <div class="material-switch" style="position: relative; top: 0.6em">
                             <input id="isSelected24" type="checkbox"/>
                             <label for="isSelected24" class="label-success"></label>
@@ -193,13 +148,13 @@
                     </div>
                 </div>
 
-                <hr class="customHr">
+                <!--<hr class="customHr">-->
 
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
+                    <div class="col-4 col-offset-2 text-right">
                         <h4>Favourites</h4>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 col-offset-1">
                         <div class="material-switch" style="position: relative; top: 0.6em">
                             <input id="displayFavourites" type="checkbox" checked/>
                             <label for="displayFavourites" class="label-success"></label>
@@ -207,22 +162,21 @@
                     </div>
                 </div>
 
-                <hr class="customHr">
+                <!--<hr class="customHr">-->
 
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
+                    <div class="col-4 col-offset-2 text-right">
                         <h4>Todos</h4>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 col-offset-1">
                         <div class="material-switch" style="position: relative; top: 0.6em">
                             <input id="displayTodo" type="checkbox" checked/>
                             <label for="displayTodo" class="label-success"></label>
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer modalFonts" id="modalFooter">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
