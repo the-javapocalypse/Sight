@@ -608,9 +608,9 @@
     function getDate() {
         var today = '';
         var d = new Date();
-        today += d.getDate() + ' ';
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-        today += months[d.getMonth()];
+        today += months[d.getMonth()] + ', ';
+        today += d.getDate();
         return today;
     }
 
@@ -683,6 +683,8 @@
         }
 
     });
+
+
 
     // Display/Hide Favourites
     $('#displayFavourites').bind('change', function () {
