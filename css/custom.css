@@ -113,6 +113,9 @@ body {
 }
 
 
+
+
+
 #todoDiv {
     box-sizing: border-box;
     overflow-y: scroll;
@@ -131,11 +134,12 @@ body {
 
 /* Style the list items */
 #todoDiv ul li {
+    text-align: left;
     max-width: 100%;
     word-break:break-all;
     cursor: pointer;
     position: relative;
-    padding: 12px 2em 12px 2em;
+    padding: 0.6em 2em 0.4em 0.7em;
     background: rgba(0,0,0,0.5);
     color: #fff;
     font-size: 1.2em;
@@ -146,6 +150,8 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
+
+
 
 
 /* Darker background-color on hover */
@@ -193,13 +199,13 @@ body {
 /* Style the header */
 .header {
     background: rgba(0,0,0,0.5);
-    padding: 0.5em 2em 1em 2em;
+    padding: 0.5em 1em 1em 1em;
     color: white;
     text-align: center;
 }
 
 .header h2{
-    padding-bottom: 0.3em;
+    padding-bottom: 0.4em;
 }
 
 /* Clear floats after the header */
