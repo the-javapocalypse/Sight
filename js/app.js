@@ -5,6 +5,7 @@
           Todo in local storage
           Execute scripts in background.js to load ahead of time
           Replace all CDNs with local files
+          icon credits: <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
      */
 
     /*
@@ -732,6 +733,8 @@
     }
 
     // Method to add new todo
+    // Returns Nothing
+    // Update Todos and add new todo
     function newTodo() {
         var inputValue = document.getElementById("todoInput").value;
         // if input is empty
@@ -831,6 +834,7 @@
         }
     }
 
+
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////    TODOS  END   /////////////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -848,4 +852,3 @@ $(function() {
     $("#todoDiv").niceScroll();
 
 });
-
