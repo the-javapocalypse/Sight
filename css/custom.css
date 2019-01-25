@@ -28,7 +28,6 @@ body {
     text-shadow: 5px 2px 15px #000000;
 }
 
-
 #body {
     background-size: 100%;
     background-position: center;
@@ -70,7 +69,6 @@ body {
     text-align: right;
     list-style-type: none;
 }
-
 
 #favouritesHr {
     max-width: 10em;
@@ -119,7 +117,7 @@ body {
     outline: none;
 }
 
-#todoInputDiv{
+#todoInputDiv {
     min-height: 7.8em;
 }
 
@@ -155,9 +153,6 @@ body {
     -ms-user-select: none;
     user-select: none;
 }
-
-
-
 
 /* Darker background-color on hover */
 #todoDiv ul li:hover {
@@ -208,9 +203,14 @@ body {
     text-align: center;
 }
 
-.header h2 {
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
+#headerHeading {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+#addTodo {
+    background-color: #000;
+    color: #ffffff;
 }
 
 /* Clear floats after the header */
@@ -255,8 +255,6 @@ input {
     align-items: center;
 }
 
-
-
 /*  Custom Checkboxes */
 
 .material-switch > input[type="checkbox"] {
@@ -277,11 +275,12 @@ input {
     content: '';
     height: 16px;
     margin-top: -8px;
-    position:absolute;
+    position: absolute;
     opacity: 0.3;
     transition: all 0.4s ease-in-out;
     width: 40px;
 }
+
 .material-switch > label::after {
     background: rgb(255, 255, 255);
     border-radius: 16px;
@@ -295,10 +294,12 @@ input {
     transition: all 0.3s ease-in-out;
     width: 24px;
 }
+
 .material-switch > input[type="checkbox"]:checked + label::before {
     background: inherit;
     opacity: 0.5;
 }
+
 .material-switch > input[type="checkbox"]:checked + label::after {
     background: inherit;
     left: 20px;
