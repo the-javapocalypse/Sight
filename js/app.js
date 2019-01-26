@@ -803,6 +803,9 @@ Sahih Al-Bukhari – Book 48 Hadith 811
             todos.push(inputValue);
             // Update Todos UI
             populateTodos(todos);
+                // Fix Scrolling Bug By Hiding/Showing the div
+                $('#todoDiv').hide();
+                $('#todoDiv').show();
             // Reset input's value
             document.getElementById("todoInput").value = '';
             // Update todos in local storage
