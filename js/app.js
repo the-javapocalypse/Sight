@@ -30,6 +30,10 @@
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
 
+    var weather = '23.0';
+    var feelsLike = '24.1';
+    var weatherIcon = 'http://cdn.apixu.com/weather/64x64/day/113.png';
+
     var todos = [];
 
     // populateTodos(todos);
@@ -727,6 +731,21 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     });
 
 
+    // Expand/Minimize Todos
+    $('#todoDiv').hide();
+
+    $('#todoHeadingToggle').click(function () {
+        $(this).fadeOut('slow', function () {
+            $('#todoDiv').fadeIn('slow');
+        });
+    });
+
+    $('#todoToggleCancelSign').click(function () {
+        $('#todoDiv').fadeOut('slow', function () {
+            $('#todoHeadingToggle').fadeIn('slow');
+        });
+    });
+
 
     // Display/Hide Favourites
     $('#displayFavourites').bind('change', function () {
@@ -907,19 +926,63 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     //Test Javascript Start
 
-    $('#todoDiv').hide();
 
-    $('#todoHeadingToggle').click(function () {
-        $(this).fadeOut('slow', function () {
-            $('#todoDiv').fadeIn('slow');
-        });
-    });
 
-    $('#todoToggleCancelSign').click(function () {
-        $('#todoDiv').fadeOut('slow', function () {
-            $('#todoHeadingToggle').fadeIn('slow');
+    function getWeatherAPI() {
+
+    }
+
+    function writeWeather() {
+        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ','+ Date();
+        chrome.storage.sync.set({'weatherSight': tempWeather}, function() {
+            console.log('Value is set to ' + tempWeather);
         });
-    });
+    }
+
+    // writeWeather();
+
+
+    function readWeather() {
+        chrome.storage.sync.get(['weatherSight'], function(result) {
+            if(Object.entries(result).length != 0){
+                for (var key in result) {
+                    var temp = result[key].split(',');
+                    weather = temp[0];
+                    feelsLike = temp[1];
+                    weatherIcon = temp[2];
+                    console.log(weather);
+                    console.log(feelsLike);
+                    console.log(weatherIcon);
+                    console.log(temp[3]);
+                }
+            }else{
+            }
+        });
+    }
+
+    readWeather();
+
+
+
+    function diff_hours(dt2, dt1)
+    {
+
+        var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+        diff /= (60 * 60);
+        return Math.abs(Math.round(diff));
+
+    }
+
+    dt1 = new Date(2014,10,2);
+    dt2 = new Date(2014,10,3);
+    console.log(diff_hours(dt1, dt2));
+
+
+    dt1 = new Date("October 13, 2014 08:11:00");
+    dt2 = new Date("October 13, 2014 11:13:00");
+    console.log(diff_hours(dt1, dt2));
+
+
     //Test JavaScript End
 
 })();
