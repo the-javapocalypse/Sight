@@ -9,7 +9,7 @@ body {
     padding: 0;
     height: 100vh;
     width: 100vw;
-    font-family: 'Avenir', 'helvetica neue', helvetica, arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     overflow-x: auto;
     overflow-y: auto;
 }
@@ -201,8 +201,12 @@ body {
     font-size: 80%;
 }
 
-#todoHeadingToggle{
+#todoHeadingToggle {
     padding: 0.8em 0 0 0.6em;
+}
+
+#todoHeadingToggle:hover {
+    cursor: pointer;
 }
 
 /* Style the header */
@@ -216,6 +220,10 @@ body {
 #headerHeading {
     padding-top: 0.1em;
     padding-bottom: 0.1em;
+}
+
+#todoToggleCancelSign:hover {
+    cursor: pointer;
 }
 
 #addTodo {
@@ -325,3 +333,19 @@ hr.customHr {
     background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
 
+/* Disable text highlighting */
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome and Opera */
+}
+
+.modalToggleSettings {
+    position: relative;
+    top: 0.6em
+}

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f404cea9-4b3b-41ba-a65c-30a364c07e71" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
     </list>
@@ -166,18 +167,18 @@
     <session id="1996352121">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="182" />
-          <entry key="html" value="687" />
-          <entry key="js" value="3248" />
+          <entry key="css" value="270" />
+          <entry key="html" value="1139" />
+          <entry key="js" value="3811" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="182" />
-          <entry key="HTML" value="687" />
+          <entry key="CSS" value="270" />
+          <entry key="HTML" value="1139" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="3248" />
+          <entry key="JavaScript" value="3811" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -202,7 +203,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5349702">
+    <splitter split-orientation="horizontal" split-proportion="0.18898809">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -235,14 +236,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dashboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="347">
-                  <caret line="194" column="35" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
+                <state relative-caret-position="401">
+                  <caret line="218" selection-start-line="218" selection-end-line="218" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -255,8 +254,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="302">
-                  <caret line="129" selection-start-line="129" selection-end-line="129" />
+                <state relative-caret-position="204">
+                  <caret line="12" selection-start-line="12" selection-end-line="12" />
                 </state>
               </provider>
             </entry>
@@ -264,12 +263,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="333">
-                  <caret line="800" selection-start-line="800" selection-end-line="800" />
+                <state relative-caret-position="-816">
+                  <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
                   <folding>
-                    <element signature="e#1605#10408#0" />
-                    <element signature="e#10786#18537#0" />
-                    <element signature="e#18591#63513#0" />
+                    <element signature="e#3426#48348#0" />
+                    <element signature="e#48853#56604#0" />
+                    <element signature="e#56696#65499#0" />
                   </folding>
                 </state>
               </provider>
@@ -297,6 +296,7 @@
       <find>settingsTrigger</find>
       <find>and Allah is wi</find>
       <find>upperLeftDiv</find>
+      <find>todoToggleCancelSign</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -308,8 +308,8 @@
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/dashboard.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
       </list>
@@ -401,12 +401,12 @@
       <workItem from="1548358424202" duration="726000" />
       <workItem from="1548359912725" duration="1673000" />
       <workItem from="1548412584846" duration="2205000" />
-      <workItem from="1548491902606" duration="16419000" />
+      <workItem from="1548491902606" duration="19293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99698000" />
+    <option name="totallyTimeSpent" value="102572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -471,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="129" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -485,28 +478,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="194" column="35" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
+        <state relative-caret-position="401">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="800" selection-start-line="800" selection-end-line="800" />
+        <state relative-caret-position="-816">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
-            <element signature="e#1605#10408#0" />
-            <element signature="e#10786#18537#0" />
-            <element signature="e#18591#63513#0" />
+            <element signature="e#3426#48348#0" />
+            <element signature="e#48853#56604#0" />
+            <element signature="e#56696#65499#0" />
           </folding>
         </state>
       </provider>
