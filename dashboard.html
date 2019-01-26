@@ -5,6 +5,9 @@
     <meta name="author" content="Muhammad Ali Zia">
     <title>New Tab | Sight</title>
 
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+
     <!-- Scripts -->
     <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -18,9 +21,9 @@
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- include the style -->
-    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/alertify.min.css"/>
     <!-- include a theme -->
-    <link rel="stylesheet" href="css/default.min.css" />
+    <link rel="stylesheet" href="css/default.min.css"/>
 
 </head>
 
@@ -28,13 +31,19 @@
 
 <div id="body" class="container-fluid">
     <!--The Upper Half of Page-->
-    <div id="upper" >
-        <div class="row p-m-0" >
+    <div id="upper">
+        <div class="row p-m-0">
             <!--Upper Left Half Start-->
-            <div class="col-2" id="upperLeftDiv">
-                <div class="div " id="todoDiv" >
+            <div class="col-3" id="upperLeftDiv">
+                <div>
+                    <h4 class="text-color noselect" id="todoHeadingToggle">Things To Do</h4>
+                </div>
+                <div class="div " id="todoDiv">
                     <div id="todoInputDiv" class="header">
-                        <h4 class="text-left" id="headerHeading">Things to do</h4>
+                        <h4 class="text-left text-muted noselect" id="headerHeading">
+                            Things to do
+                            <span class="pull-right" id="todoToggleCancelSign">&#10134;</span>
+                        </h4>
                         <input type="text" id="todoInput" placeholder="Add Todo...">
                         <span id="addTodo" class="addBtn">Add</span>
                     </div>
@@ -45,39 +54,39 @@
             </div>
             <!--Upper Left Half End-->
             <!--Upper Center Half Start-->
-            <div class="col-8">
+            <div class="col-6">
 
             </div>
             <!--Upper Center Half End-->
             <!--Upper Right Part Start-->
-            <div class="col-2">
+            <div class="col-3">
                 <!--Time Div-->
                 <div class="row full-width">
                     <div class="col-md-12 pull-right" id="timeDiv">
                         <br>
-                        <h1 id="time" class="text-color"></h1>
+                        <h1 id="time" class="text-color noselect"></h1>
                     </div>
                 </div>
                 <!--Time Div End-->
                 <!--Date Div-->
                 <div class="row full-width">
                     <div class="col-md-12 pull-right" id="dateDiv">
-                        <h4 id="date" class="text-color dateLocation"></h4>
+                        <h4 id="date" class="text-color dateLocation noselect"></h4>
                     </div>
                 </div>
                 <!--Date Div End-->
                 <!--Favourites Div-->
                 <div class="row full-width" id="favouritesDiv">
                     <div class="col-md-12 pull-right" id="favoritesDiv">
-                        <h2 class="text-color text-right">
+                        <h3 class="text-color text-right noselect">
                             Favourites
-                        </h2>
+                        </h3>
                         <hr align="right" class="text-color" id="favouritesHr">
                         <div>
-                            <h4>
-                                <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
-                                </ol>
-                            </h4>
+                            <p>
+                            <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
+                            </ol>
+                            </p>
                         </div>
                         <br>
                     </div>
@@ -105,21 +114,29 @@
             <!--Ayah & Hadith Div-->
             <div class="col-8 text-center">
                 <!--Ayat Start-->
-                <h4 id="ayah" class="text-color">
-                </h4>
+                <p id="ayah" class="text-color noselect">
+                </p>
                 <!--Ayat End-->
                 <hr class="text-color">
                 <!--Hadith Start-->
-                <h4 id="hadees" class="text-color">
-                </h4>
+                <p id="hadees" class="text-color noselect">
+                </p>
                 <!--Hadith End-->
             </div>
             <!--Ayah & Hadith Div End-->
-            <!--Todolist Div-->
+            <!--Weather Div-->
             <div class="col-2">
-
+                <div class="row text-color" id="weatherDiv">
+                    <div class="col-4 col-offset-2 text-left">
+                        <img id="weatherIcon" src="">
+                    </div>
+                    <div class="col-6 text-left">
+                        <h3 id="weatherTemp" class="noselect" ></h3>
+                        <!--<p><span class="text-muted">Feels Like</span> <span id="feelsLike"></span></p>-->
+                    </div>
+                </div>
             </div>
-            <!--Todolist Div End-->
+            <!--Weather Div End-->
         </div>
     </div>
     <!--Lower Half End-->
@@ -131,98 +148,77 @@
 
         <!-- Modal content-->
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header modalFonts" id="modalHeader">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Settings</h4>
+                <h4 class="modal-title noselect">Widget Setting</h4>
             </div>
-            <div class="modal-body">
-                <!--<table class="table ">-->
-                    <!--<tbody>-->
-                    <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<td >&ndash;&gt;-->
-                            <!--&lt;!&ndash;24 Hours Format&ndash;&gt;-->
-                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<td>&ndash;&gt;-->
-                            <!--&lt;!&ndash;&lt;!&ndash;<input type='checkbox' id='isSelected24'/>&ndash;&gt;&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="material-switch">&ndash;&gt;-->
-                                <!--&lt;!&ndash;<input id="isSelected24" type="checkbox"/>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<label for="isSelected24" class="label-success"></label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-                    <!--<tr>-->
-                        <!--<td>-->
-                            <!--Hide Favourites-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--&lt;!&ndash;<input type='checkbox' id='displayFavourites'/>&ndash;&gt;-->
-                            <!--<div class="material-switch">-->
-                                <!--<input id="displayFavourites" type="checkbox"/>-->
-                                <!--<label for="displayFavourites" class="label-success"></label>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-                        <!--<td>-->
-                            <!--Hide Todos-->
-                        <!--</td>-->
-                        <!--<td>-->
-                            <!--<div class="material-switch">-->
-                                <!--<input id="displayTodo" type="checkbox"/>-->
-                                <!--<label for="displayTodo" class="label-success"></label>-->
-                            <!--</div>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                    <!--<tr>-->
-
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-
-
+            <div class="modal-body modalFonts" id="modalBody">
 
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
-                        <h4>24 Hours Format</h4>
+                    <div class="col-4 col-offset-2 text-right">
+                        <h4 class="noselect">24 Hours Format</h4>
                     </div>
-                    <div class="col-4">
-                        <div class="material-switch" style="position: relative; top: 0.6em">
+                    <div class="col-4 col-offset-1">
+                        <div class="material-switch modalToggleSettings noselect">
                             <input id="isSelected24" type="checkbox"/>
                             <label for="isSelected24" class="label-success"></label>
                         </div>
                     </div>
                 </div>
 
-                <hr class="customHr">
+                <!--<hr class="customHr">-->
 
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
-                        <h4>Favourites</h4>
+                    <div class="col-4 col-offset-2 text-right">
+                        <h4 class="noselect">Display Favourites</h4>
                     </div>
-                    <div class="col-4">
-                        <div class="material-switch" style="position: relative; top: 0.6em">
+                    <div class="col-4 col-offset-1">
+                        <div class="material-switch modalToggleSettings" >
                             <input id="displayFavourites" type="checkbox" checked/>
                             <label for="displayFavourites" class="label-success"></label>
                         </div>
                     </div>
                 </div>
 
-                <hr class="customHr">
+                <!--<hr class="customHr">-->
 
                 <div class="row">
-                    <div class="col-5 col-offset-2 text-center">
-                        <h4>Todos</h4>
+                    <div class="col-4 col-offset-2 text-right">
+                        <h4 class="noselect">Display Todo</h4>
                     </div>
-                    <div class="col-4">
-                        <div class="material-switch" style="position: relative; top: 0.6em">
+                    <div class="col-4 col-offset-1">
+                        <div class="material-switch modalToggleSettings">
                             <input id="displayTodo" type="checkbox" checked/>
                             <label for="displayTodo" class="label-success"></label>
                         </div>
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-4 col-offset-2 text-right">
+                        <h4 class="noselect">Display Weather</h4>
+                    </div>
+                    <div class="col-4 col-offset-1">
+                        <div class="material-switch modalToggleSettings">
+                            <input id="weatherToggle" type="checkbox" checked/>
+                            <label for="weatherToggle" class="label-success"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <h4>
+                    Contact
+                </h4>
+                <hr>
+                <p>
+                    Report bugs and suggestions at muhammad.17ali@gmail.com
+                    with subject "Sight".
+                </p>
+
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer modalFonts" id="modalFooter">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
