@@ -739,11 +739,14 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     // Display/Hide Todos
     $('#displayTodo').bind('change', function () {
-        if ($(this).is(':checked'))
-            $("#todoDiv").fadeIn("slow");
-        else
+        if ($(this).is(':checked')) {
+            // $("#todoDiv").fadeIn("slow");
+            $("#todoHeadingToggle").fadeIn('slow');
+        }
+        else{
             $("#todoDiv").fadeOut("slow");
-
+            $("#todoHeadingToggle").fadeOut('slow');
+        }
     });
 
     // Check if image exists i.e if the image url is valid or not
@@ -898,7 +901,19 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     //Test Javascript Start
 
+    $('#todoDiv').hide();
 
+    $('#todoHeadingToggle').click(function () {
+        $(this).fadeOut('slow', function () {
+            $('#todoDiv').fadeIn('slow');
+        });
+    });
+
+    $('#todoToggleCancelSign').click(function () {
+        $('#todoDiv').fadeOut('slow', function () {
+            $('#todoHeadingToggle').fadeIn('slow');
+        });
+    });
     //Test JavaScript End
 
 })();

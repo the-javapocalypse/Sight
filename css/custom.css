@@ -125,8 +125,9 @@ body {
 #todoDiv {
     box-sizing: border-box;
     overflow-y: scroll;
-    max-height: 75vh;
+    height: 75vh;
     width: 100%;
+    background-color: red;
 }
 
 /* Remove margins and padding from the list */
@@ -196,6 +197,15 @@ body {
     color: red;
 }
 
+#todoToggleCancelSign {
+    color: red;
+    font-size: 80%;
+}
+
+#todoHeadingToggle{
+    padding: 0.8em 0 0 0.6em;
+}
+
 /* Style the header */
 .header {
     background: rgba(0, 0, 0, 0.5);
@@ -205,8 +215,8 @@ body {
 }
 
 #headerHeading {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
 }
 
 #addTodo {
@@ -252,8 +262,8 @@ input {
     padding-left: 0;
     padding-right: 0;
     height: 75vh;
-    display: flex;
-    align-items: center;
+    /*display: flex;*/
+    /*align-items: center;*/
 }
 
 /*  Custom Checkboxes */

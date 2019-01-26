@@ -18,9 +18,9 @@
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- include the style -->
-    <link rel="stylesheet" href="css/alertify.min.css" />
+    <link rel="stylesheet" href="css/alertify.min.css"/>
     <!-- include a theme -->
-    <link rel="stylesheet" href="css/default.min.css" />
+    <link rel="stylesheet" href="css/default.min.css"/>
 
 </head>
 
@@ -28,13 +28,19 @@
 
 <div id="body" class="container-fluid">
     <!--The Upper Half of Page-->
-    <div id="upper" >
-        <div class="row p-m-0" >
+    <div id="upper">
+        <div class="row p-m-0">
             <!--Upper Left Half Start-->
             <div class="col-3" id="upperLeftDiv">
-                <div class="div " id="todoDiv" >
+                <div>
+                    <h4 class="text-color" id="todoHeadingToggle">Things To Do</h4>
+                </div>
+                <div class="div " id="todoDiv">
                     <div id="todoInputDiv" class="header">
-                        <h4 class="text-left text-muted" id="headerHeading">Things to do</h4>
+                        <h4 class="text-left text-muted" id="headerHeading">
+                            Things to do
+                            <span class="pull-right" id="todoToggleCancelSign">&#10006;</span>
+                        </h4>
                         <input type="text" id="todoInput" placeholder="Add Todo...">
                         <span id="addTodo" class="addBtn">Add</span>
                     </div>
@@ -75,8 +81,8 @@
                         <hr align="right" class="text-color" id="favouritesHr">
                         <div>
                             <p>
-                                <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
-                                </ol>
+                            <ol style="list-style-type: none; text-decoration: none!important;" id="favorites">
+                            </ol>
                             </p>
                         </div>
                         <br>
@@ -117,6 +123,8 @@
             <!--Ayah & Hadith Div End-->
             <!--Todolist Div-->
             <div class="col-2">
+
+
 
             </div>
             <!--Todolist Div End-->
