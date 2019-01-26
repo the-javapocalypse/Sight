@@ -6,7 +6,8 @@
 	"offline_enabled": true,
 	"permissions": [
 		"storage",
-		"topSites"
+		"topSites",
+		"geolocation"
 	],
 	"background": {
 		"scripts": [ "background.js" ]

@@ -611,7 +611,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     dateElem.innerHTML = getDate();
 
     // Set hadith
-    hadeesElem.innerHTML = hadiths[ idx ];
+    hadeesElem.innerHTML = hadiths[idx];
 
     // Method to calculate and format time
     // Returns a string containing time
@@ -713,15 +713,14 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     // Toggle time between 12 hours and 24 hours format
     $('#isSelected24').bind('change', function () {
-        if ($(this).is(':checked')){
+        if ($(this).is(':checked')) {
             $("#timeDiv").fadeOut("slow", function () {
                 timeElem.innerHTML = getTime(0);
             });
             $("#timeDiv").fadeIn("slow");
         }
 
-        else
-        {
+        else {
             $("#timeDiv").fadeOut("slow", function () {
                 timeElem.innerHTML = getTime(1);
             });
@@ -762,7 +761,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
             // $("#todoDiv").fadeIn("slow");
             $("#todoHeadingToggle").fadeIn('slow');
         }
-        else{
+        else {
             $("#todoDiv").fadeOut("slow");
             $("#todoHeadingToggle").fadeOut('slow');
         }
@@ -788,21 +787,19 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 ///////////////////////////////////////////////////////////////////////
 
 
-
     // Read todos, if there are todos already stored in the local storage
     readTodos();
-
 
 
     // Create and add event listener on clicking add todos button
     document.getElementById("addTodo").addEventListener("click", newTodo);
 
     // Add todo when Enter/Return is pressed
-    document.getElementById('todoInput').onkeypress = function(e){
+    document.getElementById('todoInput').onkeypress = function (e) {
         if (!e) e = window.event;
         var keyCode = e.keyCode || e.which;
         // IF the code of rpessed key is equals to Return Key
-        if (keyCode == '13'){
+        if (keyCode == '13') {
             //Add New Todo
             newTodo();
         }
@@ -834,39 +831,36 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     }
 
 
-
     // Method to write todos in local sync storage
-    function writeTodos(data){
+    function writeTodos(data) {
         data = JSON.stringify(data);
-        chrome.storage.sync.set({'todoSight1': data}, function() {
+        chrome.storage.sync.set({'todoSight1': data}, function () {
             console.log('Added');
         })
     }
 
 
-
     // Method to read todos from local storage
-    function readTodos(){
-        chrome.storage.sync.get(['todoSight1'], function(result) {
-            if(Object.entries(result).length != 0){
+    function readTodos() {
+        chrome.storage.sync.get(['todoSight1'], function (result) {
+            if (Object.entries(result).length != 0) {
                 for (var key in result) {
                     var temp = result[key].replace(/'/g, '"');
                     temp = JSON.parse(temp);
                     todos = temp;
                     populateTodos(todos);
                 }
-            }else{
+            } else {
             }
         });
     }
 
 
-
     // Method to populate Todos list. Generate and append li nodes
     // Returns Nothing
     // Update UI of todos
-    function populateTodos(todo){
-        try{
+    function populateTodos(todo) {
+        try {
             // Reset the todos list
             $("#todoList").empty();
 
@@ -898,12 +892,12 @@ Sahih Al-Bukhari – Book 48 Hadith 811
             var close = document.getElementsByClassName("close");
             var i;
             for (i = 0; i < close.length; i++) {
-                close[i].onclick = function() {
+                close[i].onclick = function () {
                     var div = this.parentElement;
                     // Hide the canceled item
                     div.className = "hide";
                     // Remove canceled item for array
-                    todos.splice( todos.indexOf(div.innerText.split("\u00D7")[0]) , 1);
+                    todos.splice(todos.indexOf(div.innerText.split("\u00D7")[0]), 1);
                     // Update Todos UI
                     populateTodos(todos);
                     // Fix Scrolling Bug By Hiding/Showing the div
@@ -914,7 +908,7 @@ Sahih Al-Bukhari – Book 48 Hadith 811
                     alertify.message('Task Completed &#10004;');
                 }
             }
-        }catch (e) {
+        } catch (e) {
         }
     }
 
@@ -927,24 +921,62 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     //Test Javascript Start
 
 
+    // async function getLocation() {
+    //     navigator.geolocation.getCurrentPosition(function (location) {
+    //         // console.log(location.coords.latitude);
+    //         // console.log(location.coords.longitude);
+    //         // console.log(location.coords.accuracy);
+    //         var geo = location.coords.latitude + ',' + location.coords.longitude;
+    //         // console.log(geo);
+    //         return geo;
+    //     });
+    // }
+
+
+    function difference_hours(date) {
+        var dateOneObj = new Date(date);
+        var dateTwoObj = new Date();
+        var hours = Math.abs(dateTwoObj - dateOneObj) / 36e5;
+        return hours;
+    }
 
     function getWeatherAPI() {
 
+        navigator.geolocation.getCurrentPosition(function (location) {
+            var geo = location.coords.latitude + ',' + location.coords.longitude;
+            var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
+
+            $.getJSON(url, function (data) {
+                weather = data.current.temp_c;
+                feelsLike = data.current.feelslike_c;
+                weatherIcon = data.current.condition.icon;
+
+            })
+
+        });
+
+
+    }
+
+    getWeatherAPI();
+
+    function updateWeatherUI(){
+        $('#weatherIcon').attr("src",weatherIcon);
+        $('#weatherTemp').innerText = weather + '&#176;C';
+        $('#feelsLike').innerText = feelsLike + '&#176;C';
     }
 
     function writeWeather() {
-        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ','+ Date();
-        chrome.storage.sync.set({'weatherSight': tempWeather}, function() {
+        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date();
+        chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
             console.log('Value is set to ' + tempWeather);
         });
     }
 
-    // writeWeather();
-
 
     function readWeather() {
-        chrome.storage.sync.get(['weatherSight'], function(result) {
-            if(Object.entries(result).length != 0){
+        chrome.storage.sync.get(['weatherSight'], function (result) {
+            if (Object.entries(result).length != 0) {
                 for (var key in result) {
                     var temp = result[key].split(',');
                     weather = temp[0];
@@ -954,8 +986,10 @@ Sahih Al-Bukhari – Book 48 Hadith 811
                     console.log(feelsLike);
                     console.log(weatherIcon);
                     console.log(temp[3]);
+                    console.log(Date());
+                    console.log(difference_hours(temp[3]));
                 }
-            }else{
+            } else {
             }
         });
     }
@@ -963,32 +997,12 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     readWeather();
 
 
-
-    function diff_hours(dt2, dt1)
-    {
-
-        var diff =(dt2.getTime() - dt1.getTime()) / 1000;
-        diff /= (60 * 60);
-        return Math.abs(Math.round(diff));
-
-    }
-
-    dt1 = new Date(2014,10,2);
-    dt2 = new Date(2014,10,3);
-    console.log(diff_hours(dt1, dt2));
-
-
-    dt1 = new Date("October 13, 2014 08:11:00");
-    dt2 = new Date("October 13, 2014 11:13:00");
-    console.log(diff_hours(dt1, dt2));
-
-
     //Test JavaScript End
 
 })();
 
 
-$(function() {
+$(function () {
     $("#todoDiv").niceScroll();
 
 });
