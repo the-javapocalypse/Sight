@@ -30,9 +30,9 @@
     var hadeesElem = document.getElementById('hadees');
     var index = 0;
 
-    var weather = '23.0';
-    var feelsLike = '24.1';
-    var weatherIcon = 'http://cdn.apixu.com/weather/64x64/day/113.png';
+    var weather = '';
+    var feelsLike = '';
+    var weatherIcon = '';
 
     var todos = [];
 
@@ -921,18 +921,6 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     //Test Javascript Start
 
 
-    // async function getLocation() {
-    //     navigator.geolocation.getCurrentPosition(function (location) {
-    //         // console.log(location.coords.latitude);
-    //         // console.log(location.coords.longitude);
-    //         // console.log(location.coords.accuracy);
-    //         var geo = location.coords.latitude + ',' + location.coords.longitude;
-    //         // console.log(geo);
-    //         return geo;
-    //     });
-    // }
-
-
     function difference_hours(date) {
         var dateOneObj = new Date(date);
         var dateTwoObj = new Date();
@@ -941,7 +929,6 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     }
 
     function getWeatherAPI() {
-
         navigator.geolocation.getCurrentPosition(function (location) {
             var geo = location.coords.latitude + ',' + location.coords.longitude;
             var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
@@ -951,25 +938,23 @@ Sahih Al-Bukhari – Book 48 Hadith 811
                 feelsLike = data.current.feelslike_c;
                 weatherIcon = data.current.condition.icon;
 
+                writeWeather();
             })
-
         });
-
-
     }
 
-    getWeatherAPI();
+    // getWeatherAPI();
 
     function updateWeatherUI(){
-        $('#weatherIcon').attr("src",weatherIcon);
-        $('#weatherTemp').innerText = weather + '&#176;C';
-        $('#feelsLike').innerText = feelsLike + '&#176;C';
+        $('#weatherIcon').attr("src", 'http:' + weatherIcon);
+        $('#weatherTemp').text( weather + '°C' );
+        // $('#feelsLike').text( feelsLike + '°C' );
     }
 
     function writeWeather() {
         let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date();
         chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
-            console.log('Value is set to ' + tempWeather);
+            // SOmehting Maybe??
         });
     }
 
@@ -982,12 +967,12 @@ Sahih Al-Bukhari – Book 48 Hadith 811
                     weather = temp[0];
                     feelsLike = temp[1];
                     weatherIcon = temp[2];
-                    console.log(weather);
-                    console.log(feelsLike);
-                    console.log(weatherIcon);
-                    console.log(temp[3]);
-                    console.log(Date());
-                    console.log(difference_hours(temp[3]));
+
+                    if(difference_hours(temp[3]) > 5){
+                        getWeatherAPI();
+                    }
+
+                    updateWeatherUI();
                 }
             } else {
             }
