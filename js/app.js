@@ -711,6 +711,32 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     // Get most visited sites a.k.a favourites
     chrome.topSites.get(MostVisitedWebsites);
 
+
+
+    // Check if image exists i.e if the image url is valid or not
+    // Param: Image url
+    // Returns Boolean
+    function imageExists(url) {
+        var image = new Image();
+        image.src = url;
+        if (!image.complete) {
+            return false;
+        }
+        else if (image.height === 0) {
+            return false;
+        }
+        return true;
+    }
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////    SETTINGS TOGGLE  START   ///////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
     // Toggle time between 12 hours and 24 hours format
     $('#isSelected24').bind('change', function () {
         if ($(this).is(':checked')) {
@@ -726,6 +752,16 @@ Sahih Al-Bukhari – Book 48 Hadith 811
             });
             $("#timeDiv").fadeIn("slow");
         }
+
+    });
+
+
+    // Display/Hide Favourites
+    $('#displayFavourites').bind('change', function () {
+        if ($(this).is(':checked'))
+            $("#favouritesDiv").fadeIn("slow");
+        else
+            $("#favouritesDiv").fadeOut("slow");
 
     });
 
@@ -746,15 +782,6 @@ Sahih Al-Bukhari – Book 48 Hadith 811
     });
 
 
-    // Display/Hide Favourites
-    $('#displayFavourites').bind('change', function () {
-        if ($(this).is(':checked'))
-            $("#favouritesDiv").fadeIn("slow");
-        else
-            $("#favouritesDiv").fadeOut("slow");
-
-    });
-
     // Display/Hide Todos
     $('#displayTodo').bind('change', function () {
         if ($(this).is(':checked')) {
@@ -767,20 +794,162 @@ Sahih Al-Bukhari – Book 48 Hadith 811
         }
     });
 
-    // Check if image exists i.e if the image url is valid or not
-    // Param: Image url
-    // Returns Boolean
-    function imageExists(url) {
-        var image = new Image();
-        image.src = url;
-        if (!image.complete) {
-            return false;
+
+    // Display/Hide Weather
+    $('#weatherToggle').bind('change', function () {
+        if ($(this).is(':checked')) {
+            $("#weatherDiv").fadeIn('slow');
         }
-        else if (image.height === 0) {
-            return false;
+        else {
+            $("#weatherDiv").fadeOut('slow');
         }
-        return true;
+    });
+
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////    SETTINGS TOGGLE  END   ///////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////    WEATHER  START   ///////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+/*
+Logic:
+Read weather from internal storage
+Check if the weather data stored is older than 5 hours
+    if older: Fetch fresh data
+    if not older: Use sotred data
+Populate data at front end
+ */
+
+    // Method to calculate difference of time in hours
+    // Param: Old time
+    // Return Hours difference between current and old time
+    function difference_hours(date) {
+        var dateOneObj = new Date(date);
+        var dateTwoObj = new Date();
+        var hours = Math.abs(dateTwoObj - dateOneObj) / 36e5;
+        return hours;
     }
+
+
+    // Method to fetch fresh data
+    function getWeatherAPI() {
+        // get the geo location
+        navigator.geolocation.getCurrentPosition(function (location) {
+            var geo = location.coords.latitude + ',' + location.coords.longitude;
+            // Form the url
+            var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
+            // API Endpoint
+            $.getJSON(url, function (data) {
+                // Update weather
+                weather = data.current.temp_c;
+                feelsLike = data.current.feelslike_c;
+                weatherIcon = data.current.condition.icon;
+                // Update Weather data in Local Storage
+                writeWeather();
+            })
+        });
+    }
+
+    // Update image link and text at Front End
+    function updateWeatherUI(){
+        $('#weatherIcon').attr("src", 'http:' + weatherIcon);
+        $('#weatherTemp').text( weather + '°C' );
+        // $('#feelsLike').text( feelsLike + '°C' );
+    }
+
+    // Write Weather Data in local storage
+    function writeWeather() {
+        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date();
+        chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
+            // SOmehting Maybe??
+        });
+    }
+
+    // Read weather data from local storage
+    // Also checks for data age and fetch fresh data
+    // Also calls updateWeatherUI method
+    function readWeather() {
+        chrome.storage.sync.get(['weatherSight'], function (result) {
+            if (Object.entries(result).length != 0) {
+                for (var key in result) {
+                    // Read data and split it
+                    var temp = result[key].split(',');
+                    weather = temp[0];
+                    feelsLike = temp[1];
+                    weatherIcon = temp[2];
+
+                    // If data is older than 5 hours, fetch fresh data
+                    if(difference_hours(temp[3]) > 5){
+                        getWeatherAPI();
+                    }
+
+                    // Update UI
+                    updateWeatherUI();
+                }
+            } else {
+                // If running for first time
+                // Fetch data
+                getWeatherAPI();
+                //Update UI
+                updateWeatherUI();
+            }
+        });
+    }
+
+    // Call readWeather method. It triggers all other methods related to
+    // weather conditionally
+    readWeather();
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////////    WEATHER  END   ///////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////    TODOS  START   /////////////////////////////
@@ -920,66 +1089,6 @@ Sahih Al-Bukhari – Book 48 Hadith 811
 
     //Test Javascript Start
 
-
-    function difference_hours(date) {
-        var dateOneObj = new Date(date);
-        var dateTwoObj = new Date();
-        var hours = Math.abs(dateTwoObj - dateOneObj) / 36e5;
-        return hours;
-    }
-
-    function getWeatherAPI() {
-        navigator.geolocation.getCurrentPosition(function (location) {
-            var geo = location.coords.latitude + ',' + location.coords.longitude;
-            var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
-
-            $.getJSON(url, function (data) {
-                weather = data.current.temp_c;
-                feelsLike = data.current.feelslike_c;
-                weatherIcon = data.current.condition.icon;
-
-                writeWeather();
-            })
-        });
-    }
-
-    // getWeatherAPI();
-
-    function updateWeatherUI(){
-        $('#weatherIcon').attr("src", 'http:' + weatherIcon);
-        $('#weatherTemp').text( weather + '°C' );
-        // $('#feelsLike').text( feelsLike + '°C' );
-    }
-
-    function writeWeather() {
-        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date();
-        chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
-            // SOmehting Maybe??
-        });
-    }
-
-
-    function readWeather() {
-        chrome.storage.sync.get(['weatherSight'], function (result) {
-            if (Object.entries(result).length != 0) {
-                for (var key in result) {
-                    var temp = result[key].split(',');
-                    weather = temp[0];
-                    feelsLike = temp[1];
-                    weatherIcon = temp[2];
-
-                    if(difference_hours(temp[3]) > 5){
-                        getWeatherAPI();
-                    }
-
-                    updateWeatherUI();
-                }
-            } else {
-            }
-        });
-    }
-
-    readWeather();
 
 
     //Test JavaScript End
