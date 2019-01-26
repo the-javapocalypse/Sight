@@ -803,9 +803,9 @@ Sahih Al-Bukhari – Book 48 Hadith 811
             todos.push(inputValue);
             // Update Todos UI
             populateTodos(todos);
-                // Fix Scrolling Bug By Hiding/Showing the div
-                $('#todoDiv').hide();
-                $('#todoDiv').show();
+            // Fix Scrolling Bug By Hiding/Showing the div
+            $('#todoDiv').hide();
+            $('#todoDiv').show();
             // Reset input's value
             document.getElementById("todoInput").value = '';
             // Update todos in local storage
@@ -887,6 +887,9 @@ Sahih Al-Bukhari – Book 48 Hadith 811
                     todos.splice( todos.indexOf(div.innerText.split("\u00D7")[0]) , 1);
                     // Update Todos UI
                     populateTodos(todos);
+                    // Fix Scrolling Bug By Hiding/Showing the div
+                    $('#todoDiv').hide();
+                    $('#todoDiv').show();
                     // Update todos in local storage
                     writeTodos(todos);
                     alertify.message('Task Completed &#10004;');

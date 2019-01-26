@@ -127,7 +127,6 @@ body {
     overflow-y: scroll;
     height: 75vh;
     width: 100%;
-    background-color: red;
 }
 
 /* Remove margins and padding from the list */
