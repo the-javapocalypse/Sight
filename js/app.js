@@ -1792,6 +1792,10 @@ Populate data at front end
                 getWeatherAPI();
                 //Update UI
                 updateWeatherUI();
+
+                //Might solve the bug
+                $("#weatherDiv").hide();
+                $("#weatherDiv").show();
             }
         });
     }
