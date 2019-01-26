@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Sight",
 	"description": "Replace your New Tab page with an inspirational dashboard",
-	"version": "1.0",
+	"version": "1.2",
 	"offline_enabled": true,
 	"permissions": [
 		"storage",
