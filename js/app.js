@@ -1746,6 +1746,8 @@ Populate data at front end
                 weatherIcon = data.current.condition.icon;
                 // Update Weather data in Local Storage
                 writeWeather();
+                // Update UI of Weather (Fixes Bug)
+                updateWeatherUI();
             })
         });
     }
