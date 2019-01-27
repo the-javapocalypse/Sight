@@ -1,5 +1,5 @@
 {
-	"manifest_version": 2.1,
+	"manifest_version": 3,
 	"name": "Sight",
 	"description": "Replace new tab page with a beautiful dashboard containing useful widgets and a new wallpaper, Ayah and Hadith each day.",
 	"version": "1.3",
