@@ -36,11 +36,15 @@
             <!--Upper Left Half Start-->
             <div class="col-3" id="upperLeftDiv">
                 <div>
-                    <h4 class="text-color noselect" id="todoHeadingToggle">Things To Do</h4>
+                    <h4 class="text-color noselect" id="todoHeadingToggle">
+                        <span class="bgopacity">
+                            Things To Do
+                        </span>
+                    </h4>
                 </div>
                 <div class="div " id="todoDiv">
                     <div id="todoInputDiv" class="header">
-                        <h4 class="text-left text-muted noselect" id="headerHeading">
+                        <h4 class="text-left noselect" id="headerHeading">
                             Things to do
                             <span class="pull-right" id="todoToggleCancelSign">&times;</span>
                         </h4>
@@ -64,14 +68,14 @@
                 <div class="row full-width">
                     <div class="col-md-12 pull-right" id="timeDiv">
                         <br>
-                        <h1 id="time" class="text-color noselect"></h1>
+                        <h1 id="time" class="text-color noselect bgopacity"></h1>
                     </div>
                 </div>
                 <!--Time Div End-->
                 <!--Date Div-->
                 <div class="row full-width">
                     <div class="col-md-12 pull-right" id="dateDiv">
-                        <h4 id="date" class="text-color dateLocation noselect"></h4>
+                        <h4 id="date" class="text-color dateLocation noselect bgopacity"></h4>
                     </div>
                 </div>
                 <!--Date Div End-->
@@ -79,7 +83,9 @@
                 <div class="row full-width" id="favouritesDiv">
                     <div class="col-md-12 pull-right" id="favoritesDiv">
                         <h3 class="text-color text-right noselect">
-                            Favourites
+                            <span class="bgopacity">
+                                Favourites
+                            </span>
                         </h3>
                         <hr align="right" class="text-color" id="favouritesHr">
                         <div>
@@ -112,7 +118,7 @@
             </div>
             <!--Settings Div End-->
             <!--Ayah & Hadith Div-->
-            <div class="col-8 text-center">
+            <div class="col-8 text-center bgopacity">
                 <!--Ayat Start-->
                 <p id="ayah" class="text-color noselect">
                 </p>
@@ -129,7 +135,7 @@
                 <div class="row text-color" id="weatherDiv">
                     <div class="col-12 text-right">
                         <img id="weatherIcon" src="">
-                        <h3 id="weatherTemp" class="noselect"  style="float: right"></h3>
+                        <h3 id="weatherTemp" class="noselect" style="float: right"></h3>
                     </div>
                 </div>
             </div>
@@ -172,7 +178,7 @@
                         <h4 class="noselect">Display Favourites</h4>
                     </div>
                     <div class="col-4 col-offset-1">
-                        <div class="material-switch modalToggleSettings" >
+                        <div class="material-switch modalToggleSettings">
                             <input id="displayFavourites" type="checkbox" checked/>
                             <label for="displayFavourites" class="label-success"></label>
                         </div>

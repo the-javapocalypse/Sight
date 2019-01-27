@@ -1453,12 +1453,12 @@
             var _img = document.createElement('img');
             _img.src = "https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
             _img.id = "foo" + i;
-            _img.className = "liFavicon noselect";
+            _img.className = "liFavicon noselect bgopacity";
             li.appendChild(_img);
             // create anchor element
             var a = li.appendChild(document.createElement('a'));
             // add class to remove anchor default styling
-            a.className = "links text-color noselect";
+            a.className = "links text-color noselect bgopacity";
             // do the shit here
             a.href = mostVisitedURLs[i].url;
             let title = mostVisitedURLs[i].title;
@@ -1534,6 +1534,10 @@
             }
             if (hr < 10) {
                 hr = "0" + hr;
+                // Fix for time bug at 12 am
+                if(hr == "00"){ //!----------
+                    hr = 12; //!----------
+                } //!----------
             }
             return hr + ':' + min + ' ' + ampm;
         }

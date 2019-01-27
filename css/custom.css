@@ -287,6 +287,10 @@ input {
     cursor: pointer;
 }
 
+.bgopacity{
+    /*background-color: rgba(0,0,0,0.5);*/
+}
+
 /*  Custom Checkboxes */
 
 .material-switch > input[type="checkbox"] {
