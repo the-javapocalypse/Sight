@@ -198,7 +198,9 @@ body {
 
 #todoToggleCancelSign {
     color: red;
-    font-size: 80%;
+    font-size: 120%;
+    position: relative;
+    bottom: 0.15em
 }
 
 #todoHeadingToggle {
@@ -271,6 +273,18 @@ input {
     height: 75vh;
     /*display: flex;*/
     /*align-items: center;*/
+}
+
+
+#modalDismissCancel{
+    color: red;
+    font-size: 160%;
+    position: relative;
+    bottom: 1.55em
+}
+
+#modalDismissCancel:hover{
+    cursor: pointer;
 }
 
 /*  Custom Checkboxes */

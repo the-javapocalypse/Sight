@@ -42,7 +42,7 @@
                     <div id="todoInputDiv" class="header">
                         <h4 class="text-left text-muted noselect" id="headerHeading">
                             Things to do
-                            <span class="pull-right" id="todoToggleCancelSign">&#10134;</span>
+                            <span class="pull-right" id="todoToggleCancelSign">&times;</span>
                         </h4>
                         <input type="text" id="todoInput" placeholder="Add Todo...">
                         <span id="addTodo" class="addBtn">Add</span>
@@ -146,8 +146,10 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header modalFonts" id="modalHeader">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title noselect">Widget Setting</h4>
+                <h4 class="text-right noselect" data-dismiss="modal" id="modalDismissCancel">
+                    &times;
+                </h4>
             </div>
             <div class="modal-body modalFonts" id="modalBody">
 
