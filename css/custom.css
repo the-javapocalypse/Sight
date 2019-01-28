@@ -291,6 +291,10 @@ input {
     /*background-color: rgba(0,0,0,0.5);*/
 }
 
+.dark{
+    background-color: rgba(0,0,0,0.5);
+}
+
 /*  Custom Checkboxes */
 
 .material-switch > input[type="checkbox"] {
@@ -367,3 +371,10 @@ hr.customHr {
     position: relative;
     top: 0.6em
 }
+
+
+
+
+
+
+

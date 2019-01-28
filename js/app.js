@@ -1680,6 +1680,69 @@
     });
 
 
+
+    // Set Text background opacity
+    var opacity_all = false;
+
+    // Method to read saved settings for storage. If nothing is saved, it is turned on by default
+    readBgSettings();
+
+
+    // method to toggle opacity and save selection to local storage
+    function toggleOpacityAll() {
+        opacity_all = !opacity_all;
+        if(opacity_all){
+            $('.bgopacity').addClass("dark");
+            writeBgSettings();
+        }else{
+            $('.bgopacity').removeClass("dark");
+            writeBgSettings();
+        }
+    }
+
+    $("#bgOpacityToggle").bind('change', function () {
+        toggleOpacityAll();
+    });
+
+
+    // Write settings choice in local storage
+    function writeBgSettings() {
+        chrome.storage.sync.set({'bgOpacity_sight': opacity_all}, function () {
+        });
+    }
+
+    // Read setting from local storage
+    function readBgSettings() {
+        chrome.storage.sync.get(['bgOpacity_sight'], function (result) {
+            if (Object.entries(result).length != 0) {
+                for (var key in result) {
+                    opacity_all = result[key];
+                }
+
+                if(opacity_all){
+                    $('.bgopacity').addClass("dark");
+                }else{
+                    $('.bgopacity').removeClass("dark");
+                }
+
+                $('#bgOpacityToggle').prop('checked', opacity_all);
+
+            } else {
+                // because by default opacity is true
+                opacity_all = true;
+
+                if(opacity_all){
+                    $('.bgopacity').addClass("dark");
+                }else{
+                    $('.bgopacity').removeClass("dark");
+                }
+
+                $('#bgOpacityToggle').prop('checked', opacity_all);
+            }
+        });
+    }
+
+
 ///////////////////////////////////////////////////////////////////////
 /////////////////////    SETTINGS TOGGLE  END   ///////////////////////
 ///////////////////////////////////////////////////////////////////////
