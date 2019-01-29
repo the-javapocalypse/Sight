@@ -2039,7 +2039,38 @@ Populate data at front end
 
     //Test Javascript Start
 
+    // $('#searchBtn').addEventListener("click", function () {
+    //     window.open('https://www.google.com/?#q=audi r8');
+    // });
 
+    $("#searchBtn").click(function(){
+        searchQry()
+    });
+
+    // Search query when enter is pressed
+    document.getElementById('searchboxinput').onkeypress = function (e) {
+        if (!e) e = window.event;
+        var keyCode = e.keyCode || e.which;
+        // IF the code of rpessed key is equals to Return Key
+        if (keyCode == '13') {
+            //Search Query
+            searchQry();
+        }
+    }
+
+
+    // $('#searchboxinput').bind("enterKey",function(e){
+    //     //do stuff here
+    //     alert(1);
+    // });
+
+    function searchQry() {
+        var qry = $('#searchboxinput').val();
+        if( qry  == ''){
+            alertify.error('Field Empty! Please type something to search');
+        }else
+            window.location.replace('https://www.google.com/?#q=' + qry);
+    }
 
     //Test JavaScript End
 
