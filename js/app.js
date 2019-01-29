@@ -1625,6 +1625,14 @@
     var feelsLike = '';
     var weatherIcon = '';
     var weather_f = '';
+    var humidity = '';
+    var feelslike = '';
+    var feelslike_f = '';
+    var wind_mph = '';
+    var wind_kph = '';
+    var condition = '';
+    var vis_km = '';
+    var vis_m = '';
 
 
     // Method to calculate difference of time in hours
@@ -1652,6 +1660,14 @@
                 feelsLike = data.current.feelslike_c;
                 weatherIcon = data.current.condition.icon;
                 weather_f = data.current.feelslike_f;
+                condition = data.current.condition.text;
+                humidity = data.current.humidity;
+                feelslike = data.current.feelslike_c;
+                feelslike_f = data.current.feelslike_f;
+                wind_mph = data.current.wind_mph;
+                wind_kph = data.current.wind_kph;
+                vis_km = data.current.vis_km;
+                vis_m = data.current.vis_miles;
                 // Update Weather data in Local Storage
                 writeWeather();
                 // Update UI of Weather (Fixes Bug)
@@ -1674,7 +1690,7 @@
 
     // Write Weather Data in local storage
     function writeWeather() {
-        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date() + ',' + weather_f;
+        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date() + ',' + weather_f + ',' + condition + ',' + humidity + ',' + feelsLike + ',' + feelslike_f + ',' + wind_mph + ',' + wind_kph + ',' + vis_km + ',' + vis_m;
         chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
             // SOmehting Maybe??
         });
@@ -1688,11 +1704,20 @@
             if (Object.entries(result).length != 0) {
                 for (var key in result) {
                     // Read data and split it
+                    console.log(result[key]);
                     var temp = result[key].split(',');
                     weather = temp[0];
                     feelsLike = temp[1];
                     weatherIcon = temp[2];
                     weather_f = temp[4];
+                    condition = temp[5];
+                    humidity = temp[6];
+                    feelsLike = temp[7];
+                    feelslike_f = temp[8];
+                    wind_mph = temp[9];
+                    wind_kph = temp[10];
+                    vis_km = temp[11];
+                    vis_m = temp[12];
                     // If data is older than 5 hours, fetch fresh data
                     if(difference_hours(temp[3]) > 5){
                         getWeatherAPI();
