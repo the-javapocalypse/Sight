@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f404cea9-4b3b-41ba-a65c-30a364c07e71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
     </list>
@@ -144,18 +144,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="880" />
-          <entry key="html" value="1367" />
-          <entry key="js" value="6059" />
+          <entry key="css" value="894" />
+          <entry key="html" value="1625" />
+          <entry key="js" value="6413" />
           <entry key="json" value="232" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="880" />
-          <entry key="HTML" value="1367" />
+          <entry key="CSS" value="894" />
+          <entry key="HTML" value="1625" />
           <entry key="JSON" value="232" />
-          <entry key="JavaScript" value="6059" />
+          <entry key="JavaScript" value="6413" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -216,7 +216,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.28345627">
+    <splitter split-orientation="horizontal" split-proportion="0.46996838">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -232,7 +232,7 @@
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="49404">
-                  <caret line="2289" selection-start-line="2289" selection-end-line="2289" />
+                  <caret line="2321" selection-start-line="2321" selection-end-line="2321" />
                 </state>
               </provider>
             </entry>
@@ -240,8 +240,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/custom.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2829">
-                  <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
+                <state relative-caret-position="805">
+                  <caret line="449" selection-start-line="449" selection-end-line="449" />
                 </state>
               </provider>
             </entry>
@@ -249,8 +249,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dashboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="575">
-                  <caret line="251" column="57" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="57" />
+                <state relative-caret-position="322">
+                  <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -270,8 +270,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1771">
-                  <caret line="1665" selection-start-line="1665" selection-end-line="1665" />
+                <state relative-caret-position="437">
+                  <caret line="2102" column="16" selection-start-line="2102" selection-start-column="16" selection-end-line="2102" selection-end-column="16" />
                   <folding>
                     <element signature="e#1464#46383#0" />
                     <element signature="e#48222#134116#0" />
@@ -322,8 +322,8 @@
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/dashboard.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
       </list>
@@ -425,12 +425,12 @@
       <workItem from="1548760236794" duration="4539000" />
       <workItem from="1548769144785" duration="1528000" />
       <workItem from="1548772417650" duration="32000" />
-      <workItem from="1548784859938" duration="2116000" />
+      <workItem from="1548784859938" duration="4530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133005000" />
+    <option name="totallyTimeSpent" value="135419000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -507,15 +507,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2829">
-          <caret line="291" column="29" selection-start-line="291" selection-start-column="29" selection-end-line="291" selection-end-column="29" />
+        <state relative-caret-position="805">
+          <caret line="449" selection-start-line="449" selection-end-line="449" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="251" column="57" selection-start-line="251" selection-start-column="39" selection-end-line="251" selection-end-column="57" />
+        <state relative-caret-position="322">
+          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -529,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1771">
-          <caret line="1665" selection-start-line="1665" selection-end-line="1665" />
+        <state relative-caret-position="437">
+          <caret line="2102" column="16" selection-start-line="2102" selection-start-column="16" selection-end-line="2102" selection-end-column="16" />
           <folding>
             <element signature="e#1464#46383#0" />
             <element signature="e#48222#134116#0" />

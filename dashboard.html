@@ -142,8 +142,15 @@
                 <div class="row text-color" id="weatherDiv">
                     <div class="col-12 text-right">
                         <div class="bgopacity" id="weatherOuter">
-                            <img id="weatherIcon" src="">
+                            <img id="weatherIcon" src="" class="">
                             <h3 id="weatherTemp" class="noselect" style="float: right"></h3>
+                        </div>
+                        <div id="weatherDetails" class="hide bgopacity">
+                            <p>
+                                Condition: Clear, Feels Like: 123
+                                <br>
+                                Wind Speed: 123321, Visiblity: 12312
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -169,23 +176,19 @@
             <div class="modal-body modalFonts" id="modalBody">
 
                 <div class="row">
-                    <div class="col-4 col-offset-2 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">24 Hours Format</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings noselect">
                             <input id="isSelected24" type="checkbox"/>
                             <label for="isSelected24" class="label-success"></label>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-4 col-offset-2 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Enable Favourites</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="displayFavourites" type="checkbox" checked/>
                             <label for="displayFavourites" class="label-success"></label>
@@ -195,22 +198,19 @@
 
 
                 <div class="row">
-                    <div class="col-4 col-offset-2 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Enable Todo</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="displayTodo" type="checkbox" checked/>
                             <label for="displayTodo" class="label-success"></label>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-5 col-offset-1 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Enable Search</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="searchBoxToggle" type="checkbox" checked/>
                             <label for="searchBoxToggle" class="label-success"></label>
@@ -218,24 +218,21 @@
                     </div>
                 </div>
 
+
                 <div class="row">
-                    <div class="col-4 col-offset-2 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Enable Weather</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="weatherToggle" type="checkbox" checked/>
                             <label for="weatherToggle" class="label-success"></label>
                         </div>
                     </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-5 col-offset-1 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Enable Text Background</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="bgOpacityToggle" type="checkbox"/>
                             <label for="bgOpacityToggle" class="label-success"></label>
@@ -243,11 +240,12 @@
                     </div>
                 </div>
 
+
                 <div class="row">
-                    <div class="col-5 col-offset-1 text-right">
+                    <div class="col-4 text-right">
                         <h4 class="noselect">Weather in fahrenheit</h4>
                     </div>
-                    <div class="col-4 col-offset-1">
+                    <div class="col-2">
                         <div class="material-switch modalToggleSettings">
                             <input id="weatherScaleToggle" type="checkbox"/>
                             <label for="weatherScaleToggle" class="label-success"></label>

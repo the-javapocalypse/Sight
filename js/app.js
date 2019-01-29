@@ -2093,30 +2093,56 @@
 
 
 
+    // Toggle Weather Scale
+    $('#weatherScaleToggle').bind('change', function () {
+        if ($(this).is(':checked')) {
+            $('#weatherTemp').fadeOut('slow', function () {
+                updateWeatherUI(true);
+                $(this).fadeIn('slow');
+                set_weather_scale_f = true;
+                writeAllSettings();
+            })
+        }
+        else {
+            $('#weatherTemp').fadeOut('slow', function () {
+                updateWeatherUI(false);
+                $(this).fadeIn('slow');
+                set_weather_scale_f = false;
+                writeAllSettings();
+            })
+        }
+
+
+    });
+
+
+
+
     // focus inputbox when hovering
     $('#searchBtn').hover(function () {
         $('#searchboxinput').focus();
     })
 
 
-    // Toggle Weather Scale
-    $('#weatherScaleToggle').bind('change', function () {
-        if ($(this).is(':checked')) {
-            $('#weatherTemp').fadeOut('slow', function () {
-                set_weather_scale_f = true;
-                updateWeatherUI(set_weather_scale_f);
-                $(this).fadeIn('slow');
-            })
-        }
-        else {
-            $('#weatherTemp').fadeOut('slow', function () {
-                set_weather_scale_f = false;
-                updateWeatherUI(set_weather_scale_f);
-                $(this).fadeIn('slow');
-            })
-        }
-        writeAllSettings();
-    });
+
+    // Toggle Weather Details
+    // $('#weatherOuter').hover(
+    //     // hover in
+    //     function () {
+    //     $('#weatherOuter').fadeOut('fast', function () {
+    //         $('#weatherDetails').addClass('show', 10000, 'swing');
+    //     });
+    //     },
+    //
+    //     // // hover out
+    //     // function () {
+    //     //     $('#weatherDetails').removeClass('show');
+    //     //         $('#weatherOuter').fadeIn('slow');
+    //     // }
+    //
+    // );
+
+
 
 
 ///////////////////////////////////////////////////////////////////////
