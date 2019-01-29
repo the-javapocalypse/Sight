@@ -19,6 +19,7 @@
      */
 
 
+    // chrome.storage.sync.clear();
 
 
 
@@ -1604,6 +1605,147 @@
 
 
 
+///////////////////////////////////////////////////////////////////////
+///////////////////////    WEATHER  START   ///////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+    /*
+    Logic:
+    Read weather from internal storage
+    Check if the weather data stored is older than 5 hours
+        if older: Fetch fresh data
+        if not older: Use sotred data
+    Populate data at front end
+     */
+
+
+    var weather = '';
+    var feelsLike = '';
+    var weatherIcon = '';
+    var weather_f = '';
+
+
+    // Method to calculate difference of time in hours
+    // Param: Old time
+    // Return Hours difference between current and old time
+    function difference_hours(date) {
+        var dateOneObj = new Date(date);
+        var dateTwoObj = new Date();
+        var hours = Math.abs(dateTwoObj - dateOneObj) / 36e5;
+        return hours;
+    }
+
+
+    // Method to fetch fresh data
+    function getWeatherAPI() {
+        // get the geo location
+        navigator.geolocation.getCurrentPosition(function (location) {
+            var geo = location.coords.latitude + ',' + location.coords.longitude;
+            // Form the url
+            var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
+            // API Endpoint
+            $.getJSON(url, function (data) {
+                // Update weather
+                weather = data.current.temp_c;
+                feelsLike = data.current.feelslike_c;
+                weatherIcon = data.current.condition.icon;
+                weather_f = data.current.feelslike_f;
+                // Update Weather data in Local Storage
+                writeWeather();
+                // Update UI of Weather (Fixes Bug)
+                updateWeatherUI(set_weather_scale_f);
+            })
+        });
+    }
+
+    // Update image link and text at Front End
+    function updateWeatherUI(scale){
+        if(scale){
+            $('#weatherIcon').attr("src", 'http:' + weatherIcon);
+            $('#weatherTemp').text( weather_f + '°F' );
+        }else{
+            $('#weatherIcon').attr("src", 'http:' + weatherIcon);
+            $('#weatherTemp').text( weather + '°C' );
+            // $('#feelsLike').text( feelsLike + '°C' );
+        }
+    }
+
+    // Write Weather Data in local storage
+    function writeWeather() {
+        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date() + ',' + weather_f;
+        chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
+            // SOmehting Maybe??
+        });
+    }
+
+    // Read weather data from local storage
+    // Also checks for data age and fetch fresh data
+    // Also calls updateWeatherUI method
+    function readWeather() {
+        chrome.storage.sync.get(['weatherSight'], function (result) {
+            if (Object.entries(result).length != 0) {
+                for (var key in result) {
+                    // Read data and split it
+                    var temp = result[key].split(',');
+                    weather = temp[0];
+                    feelsLike = temp[1];
+                    weatherIcon = temp[2];
+                    weather_f = temp[4];
+                    // If data is older than 5 hours, fetch fresh data
+                    if(difference_hours(temp[3]) > 5){
+                        getWeatherAPI();
+                    }
+
+                    // Update UI
+                    updateWeatherUI(set_weather_scale_f);
+                }
+            } else {
+                // If running for first time
+                // Fetch data
+                getWeatherAPI();
+                //Update UI
+                updateWeatherUI(set_weather_scale_f);
+
+                //Might solve the bug
+                $("#weatherDiv").hide();
+                $("#weatherDiv").show();
+            }
+        });
+    }
+
+    // Call readWeather method. It triggers all other methods related to
+    // weather conditionally
+    readWeather();
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////////    WEATHER  END   ///////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////
 ///////////////////    SETTINGS TOGGLE  START   ///////////////////////
@@ -1629,13 +1771,14 @@
     var set_weather = true;
     var set_search = true;
     var set_opacity = true;
+    var set_weather_scale_f = false;
 
     // chrome.storage.sync.remove('settings_widgets_sight');
 
     readAllSettings();
 
     function writeAllSettings(){
-        var settings = set_time24 + ',' + set_favourites + ',' + set_expandTodo + ',' + set_todo + ',' + set_weather + ',' + set_search + ',' + set_opacity;
+        var settings = set_time24 + ',' + set_favourites + ',' + set_expandTodo + ',' + set_todo + ',' + set_weather + ',' + set_search + ',' + set_opacity + ',' + set_weather_scale_f;
             chrome.storage.sync.set({'settings_widgets_sight': settings}, function () {
                 console.log('write: ' + settings);
             });
@@ -1658,6 +1801,7 @@
                     set_weather = r[4];
                     set_search = r[5];
                     set_opacity = r[6];
+                    set_weather_scale_f = r[7];
                 }
 
 
@@ -1732,6 +1876,14 @@
                     $('#bgOpacityToggle').prop('checked', false);
                 }
 
+                if(set_weather_scale_f == 'true'){
+                    updateWeatherUI(true);
+                    $('#weatherScaleToggle').prop('checked', true);
+                }
+                else{
+                    updateWeatherUI(false);
+                    $('#weatherScaleToggle').prop('checked', false);
+                }
 
 
             } else {
@@ -1746,6 +1898,7 @@
                 set_weather = true;
                 set_search = true;
                 set_opacity = true;
+                set_weather_scale_f = false;
 
                 // Apply Settings
                 if(set_time24){
@@ -1794,6 +1947,12 @@
                 if(!set_opacity){
                     $('.bgopacity').removeClass("dark");
                 }
+                if(set_weather_scale_f){
+                    updateWeatherUI(set_weather_scale_f);
+                }
+                if(!set_weather_scale_f){
+                    updateWeatherUI(set_weather_scale_f);
+                }
 
                 // Set the checkboxes selected or not based on saved settings
                 $('#isSelected24').prop('checked', set_time24);
@@ -1803,6 +1962,7 @@
                 $('#weatherToggle').prop('checked', set_weather);
                 $('#searchBoxToggle').prop('checked', set_weather);
                 $('#bgOpacityToggle').prop('checked', set_opacity);
+                $('#weatherScaleToggle').prop('checked', set_weather_scale_f);
 
                 writeAllSettings();
             }
@@ -1845,22 +2005,21 @@
     });
 
 
-
+    // Minimize/maximize todo
     $('#todoHeadingToggle').click(function () {
-        $(this).fadeOut('slow', function () {
-            $('#todoDiv').fadeIn('slow');
+        $(this).fadeOut('fast', function () {
+            $('#todoDiv').fadeIn('fast');
             set_expandTodo = true;
             writeAllSettings();
-            console.log(1);
+            $('#todoInput').focus();
         });
     });
 
     $('#todoToggleCancelSign').click(function () {
-        $('#todoDiv').fadeOut('slow', function () {
-            $('#todoHeadingToggle').fadeIn('slow');
+        $('#todoDiv').fadeOut('fast', function () {
+            $('#todoHeadingToggle').fadeIn('fast');
             set_expandTodo = false;
             writeAllSettings();
-            console.log(2);
         });
     });
 
@@ -1934,6 +2093,32 @@
 
 
 
+    // focus inputbox when hovering
+    $('#searchBtn').hover(function () {
+        $('#searchboxinput').focus();
+    })
+
+
+    // Toggle Weather Scale
+    $('#weatherScaleToggle').bind('change', function () {
+        if ($(this).is(':checked')) {
+            $('#weatherTemp').fadeOut('slow', function () {
+                set_weather_scale_f = true;
+                updateWeatherUI(set_weather_scale_f);
+                $(this).fadeIn('slow');
+            })
+        }
+        else {
+            $('#weatherTemp').fadeOut('slow', function () {
+                set_weather_scale_f = false;
+                updateWeatherUI(set_weather_scale_f);
+                $(this).fadeIn('slow');
+            })
+        }
+        writeAllSettings();
+    });
+
+
 ///////////////////////////////////////////////////////////////////////
 /////////////////////    SETTINGS TOGGLE  END   ///////////////////////
 ///////////////////////////////////////////////////////////////////////
@@ -1942,135 +2127,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////
-///////////////////////    WEATHER  START   ///////////////////////////
-///////////////////////////////////////////////////////////////////////
-
-
-
-/*
-Logic:
-Read weather from internal storage
-Check if the weather data stored is older than 5 hours
-    if older: Fetch fresh data
-    if not older: Use sotred data
-Populate data at front end
- */
-
-
-    var weather = '';
-    var feelsLike = '';
-    var weatherIcon = '';
-
-
-    // Method to calculate difference of time in hours
-    // Param: Old time
-    // Return Hours difference between current and old time
-    function difference_hours(date) {
-        var dateOneObj = new Date(date);
-        var dateTwoObj = new Date();
-        var hours = Math.abs(dateTwoObj - dateOneObj) / 36e5;
-        return hours;
-    }
-
-
-    // Method to fetch fresh data
-    function getWeatherAPI() {
-        // get the geo location
-        navigator.geolocation.getCurrentPosition(function (location) {
-            var geo = location.coords.latitude + ',' + location.coords.longitude;
-            // Form the url
-            var url = 'http://api.apixu.com/v1/current.json?key=caefebf6e1904ebcae3130449192601&q=' + geo;
-            // API Endpoint
-            $.getJSON(url, function (data) {
-                // Update weather
-                weather = data.current.temp_c;
-                feelsLike = data.current.feelslike_c;
-                weatherIcon = data.current.condition.icon;
-                // Update Weather data in Local Storage
-                writeWeather();
-                // Update UI of Weather (Fixes Bug)
-                updateWeatherUI();
-            })
-        });
-    }
-
-    // Update image link and text at Front End
-    function updateWeatherUI(){
-        $('#weatherIcon').attr("src", 'http:' + weatherIcon);
-        $('#weatherTemp').text( weather + '°C' );
-        // $('#feelsLike').text( feelsLike + '°C' );
-    }
-
-    // Write Weather Data in local storage
-    function writeWeather() {
-        let tempWeather = weather + ',' + feelsLike + ',' + weatherIcon + ',' + Date();
-        chrome.storage.sync.set({'weatherSight': tempWeather}, function () {
-            // SOmehting Maybe??
-        });
-    }
-
-    // Read weather data from local storage
-    // Also checks for data age and fetch fresh data
-    // Also calls updateWeatherUI method
-    function readWeather() {
-        chrome.storage.sync.get(['weatherSight'], function (result) {
-            if (Object.entries(result).length != 0) {
-                for (var key in result) {
-                    // Read data and split it
-                    var temp = result[key].split(',');
-                    weather = temp[0];
-                    feelsLike = temp[1];
-                    weatherIcon = temp[2];
-
-                    // If data is older than 5 hours, fetch fresh data
-                    if(difference_hours(temp[3]) > 5){
-                        getWeatherAPI();
-                    }
-
-                    // Update UI
-                    updateWeatherUI();
-                }
-            } else {
-                // If running for first time
-                // Fetch data
-                getWeatherAPI();
-                //Update UI
-                updateWeatherUI();
-
-                //Might solve the bug
-                $("#weatherDiv").hide();
-                $("#weatherDiv").show();
-            }
-        });
-    }
-
-    // Call readWeather method. It triggers all other methods related to
-    // weather conditionally
-    readWeather();
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////
-/////////////////////////    WEATHER  END   ///////////////////////////
-///////////////////////////////////////////////////////////////////////
 
 
 
@@ -2275,7 +2331,6 @@ Populate data at front end
 ///////////////////////////////////////////////////////////////////////
 /////////////////////////   SEARCH END  ///////////////////////////////
 ///////////////////////////////////////////////////////////////////////
-
 
 
 
