@@ -1448,17 +1448,17 @@
             // create new list item
             var li = ol.appendChild(document.createElement('li'));
             // add class for padding
-            li.className = "p5";
+            li.className = "p5  bgopacity";
             // Add favicons for websites
             var _img = document.createElement('img');
             _img.src = "https://plus.google.com/_/favicon?domain_url=" + mostVisitedURLs[i].url;
             _img.id = "foo" + i;
-            _img.className = "liFavicon noselect bgopacity";
+            _img.className = "liFavicon noselect";
             li.appendChild(_img);
             // create anchor element
             var a = li.appendChild(document.createElement('a'));
             // add class to remove anchor default styling
-            a.className = "links text-color noselect bgopacity";
+            a.className = "links text-color noselect";
             // do the shit here
             a.href = mostVisitedURLs[i].url;
             let title = mostVisitedURLs[i].title;
@@ -1679,6 +1679,16 @@
         }
     });
 
+
+    // Display/Hide Weather
+    $('#searchBoxToggle').bind('change', function () {
+        if ($(this).is(':checked')) {
+            $("#searchDiv").fadeIn('slow');
+        }
+        else {
+            $("#searchDiv").fadeOut('slow');
+        }
+    });
 
 
     // Set Text background opacity

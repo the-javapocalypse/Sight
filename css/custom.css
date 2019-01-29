@@ -288,7 +288,8 @@ input {
 }
 
 .bgopacity{
-    /*background-color: rgba(0,0,0,0.5);*/
+    padding: 2px 5px 2px 5px;
+    -webkit-transition: all 1s ease;
 }
 
 .dark{
