@@ -1611,6 +1611,204 @@
 
 
 
+    // $("#favouritesDiv").hide();
+    // $("#todoDiv").hide();
+    // $("#todoHeadingToggle").hide();
+    // $("#weatherDiv").hide();
+    // $("#searchDiv").hide();
+    // $('.bgopacity').removeClass("dark");
+
+
+
+
+
+    var set_time24 = false;
+    var set_favourites = true;
+    var set_expandTodo = false;
+    var set_todo = true;
+    var set_weather = true;
+    var set_search = true;
+    var set_opacity = true;
+
+    // chrome.storage.sync.remove('settings_widgets_sight');
+
+    readAllSettings();
+
+    function writeAllSettings(){
+        var settings = set_time24 + ',' + set_favourites + ',' + set_expandTodo + ',' + set_todo + ',' + set_weather + ',' + set_search + ',' + set_opacity;
+            chrome.storage.sync.set({'settings_widgets_sight': settings}, function () {
+                console.log('write: ' + settings);
+            });
+    }
+
+    function readAllSettings(){
+        chrome.storage.sync.get(['settings_widgets_sight'], function (result) {
+            // Read From Local Storage
+            if (Object.entries(result).length != 0) {
+
+                console.log("if------" + Object.entries(result).length);
+
+                for (var key in result) {
+                    console.log('input: ' + result[key]);
+                    var r = result[key].split(',');
+                    set_time24 = r[0];
+                    set_favourites = r[1];
+                    set_expandTodo = r[2];
+                    set_todo = r[3];
+                    set_weather = r[4];
+                    set_search = r[5];
+                    set_opacity = r[6];
+                }
+
+
+                // Apply saved settings
+                if(set_time24 == 'true'){
+                    timeElem.innerHTML = getTime(0);
+                    $('#isSelected24').prop('checked', true);
+                }
+                else{
+                    timeElem.innerHTML = getTime(1);
+                    $('#isSelected24').prop('checked', false);
+                }
+
+                if(set_favourites == 'true'){
+                    $("#favouritesDiv").show();
+                    $('#displayFavourites').prop('checked', true);
+                }
+                else{
+                    $("#favouritesDiv").hide();
+                    $('#displayFavourites').prop('checked', false);
+                }
+
+                if(set_todo == 'true'){
+                    $('#displayTodo').prop('checked', true);
+
+                    // expand/minimize accordingly
+                    // if(set_expandTodo == 'true'){
+                    //     $('#todoHeadingToggle').hide();
+                    //     $('#todoDiv').show();
+                    //     console.log('expand');
+                    // }
+                    // else{
+                    //     $('#todoDiv').hide();
+                    //     $('#todoHeadingToggle').show();
+                    //     console.log('minimize');
+                    // }
+                        $('#todoDiv').hide();
+                        $('#todoHeadingToggle').show();
+                        console.log('minimize');
+                }
+                else{
+                    $("#todoDiv").hide();
+                    $("#todoHeadingToggle").hide();
+                    $('#displayTodo').prop('checked', false);
+                }
+
+
+                if(set_weather == 'true'){
+                    $("#weatherDiv").show();
+                    $('#weatherToggle').prop('checked', true);
+                }
+                else{
+                    $("#weatherDiv").hide();
+                    $('#weatherToggle').prop('checked', false);
+                }
+
+                if(set_search == 'true'){
+                    $("#searchDiv").show();
+                    $('#searchBoxToggle').prop('checked', true);
+                }
+                else{
+                    $("#searchDiv").hide();
+                    $('#searchBoxToggle').prop('checked', false);
+                }
+
+                if(set_opacity == 'true'){
+                    $('.bgopacity').addClass("dark");
+                    $('#bgOpacityToggle').prop('checked', true);
+                }
+                else{
+                    $('.bgopacity').removeClass("dark");
+                    $('#bgOpacityToggle').prop('checked', false);
+                }
+
+
+
+            } else {
+
+                console.log("else---");
+
+                // Defaults
+                set_time24 = false;
+                set_favourites = true;
+                set_expandTodo = false;
+                set_todo = true;
+                set_weather = true;
+                set_search = true;
+                set_opacity = true;
+
+                // Apply Settings
+                if(set_time24){
+                    timeElem.innerHTML = getTime(0);
+                }
+                if(!set_time24){
+                    timeElem.innerHTML = getTime(1);
+                }
+                if(set_favourites){
+                    $("#favouritesDiv").show();
+                }
+                if(!set_favourites){
+                    $("#favouritesDiv").hide();
+                }
+                if(set_todo){
+                    $("#todoHeadingToggle").show();
+                }
+                if(!set_todo){
+                    $("#todoDiv").hide();
+                    $("#todoHeadingToggle").hide();
+                }
+                // Keep after show/hide todos so it will expand/minimize accordingly
+                if(set_expandTodo){
+                    $('#todoHeadingToggle').show();
+                    $('#todoDiv').hide();
+                }
+                if(!set_expandTodo){
+                    $('#todoDiv').hide();
+                    $('#todoHeadingToggle').show();
+                }
+                if(set_weather){
+                    $("#weatherDiv").show();
+                }
+                if(!set_weather){
+                    $("#weatherDiv").hide();
+                }
+                if(set_search){
+                    $("#searchDiv").show();
+                }
+                if(!set_search){
+                    $("#searchDiv").hide();
+                }
+                if(set_opacity){
+                    $('.bgopacity').addClass("dark");
+                }
+                if(!set_opacity){
+                    $('.bgopacity').removeClass("dark");
+                }
+
+                // Set the checkboxes selected or not based on saved settings
+                $('#isSelected24').prop('checked', set_time24);
+                $('#displayFavourites').prop('checked', set_favourites);
+                $('#todoHeadingToggle').prop('checked', set_expandTodo);
+                $('#displayTodo').prop('checked', set_todo);
+                $('#weatherToggle').prop('checked', set_weather);
+                $('#searchBoxToggle').prop('checked', set_weather);
+                $('#bgOpacityToggle').prop('checked', set_opacity);
+
+                writeAllSettings();
+            }
+        });
+    }
+
     // Toggle time between 12 hours and 24 hours format
     $('#isSelected24').bind('change', function () {
         if ($(this).is(':checked')) {
@@ -1618,6 +1816,7 @@
                 timeElem.innerHTML = getTime(0);
             });
             $("#timeDiv").fadeIn("slow");
+            set_time24 = true;
         }
 
         else {
@@ -1625,33 +1824,43 @@
                 timeElem.innerHTML = getTime(1);
             });
             $("#timeDiv").fadeIn("slow");
+            set_time24 = false;
         }
 
+        writeAllSettings();
     });
 
 
     // Display/Hide Favourites
     $('#displayFavourites').bind('change', function () {
-        if ($(this).is(':checked'))
+        if ($(this).is(':checked')){
             $("#favouritesDiv").fadeIn("slow");
-        else
+            set_favourites = true;
+        }
+        else{
             $("#favouritesDiv").fadeOut("slow");
-
+            set_favourites = false;
+        }
+        writeAllSettings();
     });
 
 
-    // Expand/Minimize Todos
-    $('#todoDiv').hide();
 
     $('#todoHeadingToggle').click(function () {
         $(this).fadeOut('slow', function () {
             $('#todoDiv').fadeIn('slow');
+            set_expandTodo = true;
+            writeAllSettings();
+            console.log(1);
         });
     });
 
     $('#todoToggleCancelSign').click(function () {
         $('#todoDiv').fadeOut('slow', function () {
             $('#todoHeadingToggle').fadeIn('slow');
+            set_expandTodo = false;
+            writeAllSettings();
+            console.log(2);
         });
     });
 
@@ -1661,11 +1870,14 @@
         if ($(this).is(':checked')) {
             // $("#todoDiv").fadeIn("slow");
             $("#todoHeadingToggle").fadeIn('slow');
+            set_todo = true;
         }
         else {
             $("#todoDiv").fadeOut("slow");
             $("#todoHeadingToggle").fadeOut('slow');
+            set_todo = false;
         }
+        writeAllSettings();
     });
 
 
@@ -1673,84 +1885,53 @@
     $('#weatherToggle').bind('change', function () {
         if ($(this).is(':checked')) {
             $("#weatherDiv").fadeIn('slow');
+            set_weather = true;
         }
         else {
             $("#weatherDiv").fadeOut('slow');
+            set_weather = false;
         }
+        writeAllSettings();
     });
 
 
-    // Display/Hide Weather
+    // Display/Hide Search
     $('#searchBoxToggle').bind('change', function () {
         if ($(this).is(':checked')) {
             $("#searchDiv").fadeIn('slow');
+            set_search = true;
         }
         else {
             $("#searchDiv").fadeOut('slow');
+            set_search = false;
         }
+        writeAllSettings();
     });
 
 
     // Set Text background opacity
-    var opacity_all = false;
+    // var opacity_all = false;
 
     // Method to read saved settings for storage. If nothing is saved, it is turned on by default
-    readBgSettings();
+    // readBgSettings();
 
 
-    // method to toggle opacity and save selection to local storage
-    function toggleOpacityAll() {
-        opacity_all = !opacity_all;
-        if(opacity_all){
-            $('.bgopacity').addClass("dark");
-            writeBgSettings();
-        }else{
-            $('.bgopacity').removeClass("dark");
-            writeBgSettings();
-        }
-    }
-
+    // toggle opacity and save selection to local storage
     $("#bgOpacityToggle").bind('change', function () {
-        toggleOpacityAll();
+        if ($(this).is(':checked')) {
+            set_opacity = true;
+            $('.bgopacity').addClass("dark");
+            console.log('opacity on');
+        }
+        else {
+            set_opacity = false;
+            $('.bgopacity').removeClass("dark");
+            console.log('opcaity off');
+        }
+        writeAllSettings();
     });
 
 
-    // Write settings choice in local storage
-    function writeBgSettings() {
-        chrome.storage.sync.set({'bgOpacity_sight': opacity_all}, function () {
-        });
-    }
-
-    // Read setting from local storage
-    function readBgSettings() {
-        chrome.storage.sync.get(['bgOpacity_sight'], function (result) {
-            if (Object.entries(result).length != 0) {
-                for (var key in result) {
-                    opacity_all = result[key];
-                }
-
-                if(opacity_all){
-                    $('.bgopacity').addClass("dark");
-                }else{
-                    $('.bgopacity').removeClass("dark");
-                }
-
-                $('#bgOpacityToggle').prop('checked', opacity_all);
-
-            } else {
-                // because by default opacity is true
-                opacity_all = true;
-
-                if(opacity_all){
-                    $('.bgopacity').addClass("dark");
-                }else{
-                    $('.bgopacity').removeClass("dark");
-                }
-
-                $('#bgOpacityToggle').prop('checked', opacity_all);
-            }
-        });
-    }
 
 
 ///////////////////////////////////////////////////////////////////////
@@ -2047,11 +2228,24 @@ Populate data at front end
 ///////////////////////////////////////////////////////////////////////
 
 
-    //Test Javascript Start
 
-    // $('#searchBtn').addEventListener("click", function () {
-    //     window.open('https://www.google.com/?#q=audi r8');
-    // });
+
+
+
+
+
+
+
+
+    
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+/////////////////////////   SEARCH START  /////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
 
     $("#searchBtn").click(function(){
         searchQry()
@@ -2069,10 +2263,6 @@ Populate data at front end
     }
 
 
-    // $('#searchboxinput').bind("enterKey",function(e){
-    //     //do stuff here
-    //     alert(1);
-    // });
 
     function searchQry() {
         var qry = $('#searchboxinput').val();
@@ -2082,7 +2272,18 @@ Populate data at front end
             window.location.replace('https://www.google.com/?#q=' + qry);
     }
 
-    //Test JavaScript End
+///////////////////////////////////////////////////////////////////////
+/////////////////////////   SEARCH END  ///////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 
 })();
 
