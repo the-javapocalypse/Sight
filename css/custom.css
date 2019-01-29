@@ -372,8 +372,14 @@ hr.customHr {
     top: 0.6em
 }
 
+#weatherTemp{
+    padding-right: 0.5em;
+}
 
 
+#weatherOuter{
+    display: inline-block;
+}
 
 
 
