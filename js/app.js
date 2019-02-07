@@ -1681,11 +1681,25 @@
         if(scale){
             $('#weatherIcon').attr("src", 'http:' + weatherIcon);
             $('#weatherTemp').text( weather_f + '°F' );
+            $('#det1').text('Feels Like: ' + feelslike_f + '°F');
         }else{
             $('#weatherIcon').attr("src", 'http:' + weatherIcon);
             $('#weatherTemp').text( weather + '°C' );
-            // $('#feelsLike').text( feelsLike + '°C' );
+            $('#det1').text('Feels Like: ' + feelsLike + '°C');
         }
+        $('#det2').text('Condition: ' + condition);
+    }
+
+    // Update Weather Details
+    function updateWeatherDetailsUI(imperial) {
+        if(imperial){
+            $('#det3').text('Wind: ' + wind_mph + ' mph');
+            $('#det4').text('Visiblity: ' + vis_m + ' miles');
+        }else{
+            $('#det3').text('Wind: ' + wind_kph + ' kph ');
+            $('#det4').text('Visiblity: ' + vis_km + ' km');
+        }
+        $('#det5').text('Humidity: ' + humidity + '%')
     }
 
     // Write Weather Data in local storage
@@ -1797,13 +1811,14 @@
     var set_search = true;
     var set_opacity = true;
     var set_weather_scale_f = false;
+    var set_imperial = false;
 
     // chrome.storage.sync.remove('settings_widgets_sight');
 
     readAllSettings();
 
     function writeAllSettings(){
-        var settings = set_time24 + ',' + set_favourites + ',' + set_expandTodo + ',' + set_todo + ',' + set_weather + ',' + set_search + ',' + set_opacity + ',' + set_weather_scale_f;
+        var settings = set_time24 + ',' + set_favourites + ',' + set_expandTodo + ',' + set_todo + ',' + set_weather + ',' + set_search + ',' + set_opacity + ',' + set_weather_scale_f + ',' + set_imperial;
             chrome.storage.sync.set({'settings_widgets_sight': settings}, function () {
                 console.log('write: ' + settings);
             });
@@ -1827,6 +1842,7 @@
                     set_search = r[5];
                     set_opacity = r[6];
                     set_weather_scale_f = r[7];
+                    set_imperial = r[8];
                 }
 
 
@@ -1901,6 +1917,15 @@
                     $('#bgOpacityToggle').prop('checked', false);
                 }
 
+                if(set_imperial == 'true'){
+                    $('#imperialScaleToggle').prop('checked', true);
+                    updateWeatherDetailsUI(true);
+                }
+                else{
+                    $('#imperialScaleToggle').prop('checked', false);
+                    updateWeatherDetailsUI(false);
+                }
+
                 if(set_weather_scale_f == 'true'){
                     updateWeatherUI(true);
                     $('#weatherScaleToggle').prop('checked', true);
@@ -1924,6 +1949,7 @@
                 set_search = true;
                 set_opacity = true;
                 set_weather_scale_f = false;
+                set_imperial = false;
 
                 // Apply Settings
                 if(set_time24){
@@ -1977,6 +2003,11 @@
                 }
                 if(!set_weather_scale_f){
                     updateWeatherUI(set_weather_scale_f);
+                }
+                if(set_imperial){
+                    updateWeatherDetailsUI(true);
+                }else{
+                    updateWeatherDetailsUI(false);
                 }
 
                 // Set the checkboxes selected or not based on saved settings
@@ -2142,6 +2173,19 @@
 
 
 
+    // Display/Hide Weather Details
+    $('#imperialScaleToggle').bind('change', function () {
+        if ($(this).is(':checked')) {
+            set_imperial = true;
+        }
+        else {
+            set_imperial = false;
+        }
+        updateWeatherDetailsUI(set_imperial);
+        writeAllSettings();
+    });
+
+
 
     // focus inputbox when hovering
     $('#searchBtn').hover(function () {
@@ -2151,21 +2195,32 @@
 
 
     // Toggle Weather Details
-    // $('#weatherOuter').hover(
-    //     // hover in
-    //     function () {
-    //     $('#weatherOuter').fadeOut('fast', function () {
-    //         $('#weatherDetails').addClass('show', 10000, 'swing');
-    //     });
-    //     },
-    //
-    //     // // hover out
-    //     // function () {
-    //     //     $('#weatherDetails').removeClass('show');
-    //     //         $('#weatherOuter').fadeIn('slow');
-    //     // }
-    //
-    // );
+    $('#weatherOuter').hover(
+        // Mouse Enter
+        function () {
+            $( "#weatherDetails" ).animate({
+                left: "0",
+            }, 100, function() {
+                // Animation complete.
+            });
+        }
+    );
+
+
+    $('#weatherDetails').hover(
+        // Mouse Enter
+        function () {
+        },
+        // Mouse Leave
+        function () {
+            $( "#weatherDetails" ).animate({
+                left: "25em",
+            }, 1000, function() {
+                // Animation complete.
+            });
+        }
+    );
+
 
 
 

@@ -10,8 +10,8 @@ body {
     height: 100vh;
     width: 100vw;
     font-family: 'Quicksand', sans-serif;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .p-m-0 {
@@ -444,5 +444,14 @@ hr.customHr {
 #searchDiv:hover .fa{
     background: #07051a;
     color: white;
+}
+
+#weatherDetails{
+    position: relative;
+    bottom: 6em;
+    background-color: rgba(0,0,0,0.8);
+    left: 25em;
+    -webkit-animation: ease 2s;
+    text-align: center;
 }
 
