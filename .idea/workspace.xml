@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f404cea9-4b3b-41ba-a65c-30a364c07e71" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Design.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/alertify.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/bg.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/extra/SIGHT_ORIG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/extra/Screenshot.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/extra/promo_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/extra/promo_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/extra/promo_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sight_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sight_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sight_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/sight_64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/alertify.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-2.0.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery.nicescroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -123,10 +153,10 @@
     <session id="1251144046">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
@@ -135,24 +165,24 @@
           <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.38" value="1" />
-          <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.4" value="5" />
           <entry key="project.open.time.48" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="894" />
+          <entry key="css" value="936" />
           <entry key="html" value="1625" />
           <entry key="js" value="6716" />
-          <entry key="json" value="232" />
+          <entry key="json" value="233" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="894" />
+          <entry key="CSS" value="936" />
           <entry key="HTML" value="1625" />
-          <entry key="JSON" value="232" />
+          <entry key="JSON" value="233" />
           <entry key="JavaScript" value="6716" />
         </counts>
       </usages-collector>
@@ -161,16 +191,16 @@
           <entry key="LICENSE" value="1" />
           <entry key="css" value="2" />
           <entry key="html" value="3" />
-          <entry key="js" value="2" />
-          <entry key="json" value="1" />
+          <entry key="js" value="4" />
+          <entry key="json" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
           <entry key="HTML" value="3" />
-          <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="2" />
+          <entry key="JSON" value="2" />
+          <entry key="JavaScript" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -214,74 +244,31 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.10590095">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/manifest.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="92">
-                  <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/js/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="49404">
-                  <caret line="2346" selection-start-line="2346" selection-end-line="2346" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/custom.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="805">
-                  <caret line="449" selection-start-line="449" selection-end-line="449" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dashboard.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="322">
-                  <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
-                  <folding>
-                    <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/js/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
-                  <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#1464#46383#0" />
-                    <element signature="e#48222#134116#0" />
-                    <element signature="e#134761#179133#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FireFox/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24748">
+              <caret line="2330" selection-start-line="2204" selection-start-column="2" selection-end-line="2330" />
+              <folding>
+                <element signature="e#1500#46419#0" />
+                <element signature="e#48258#134152#0" />
+                <element signature="e#134797#179169#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FireFox/manifest.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -320,10 +307,12 @@
         <option value="$PROJECT_DIR$/popup.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/background.js" />
-        <option value="$PROJECT_DIR$/manifest.json" />
-        <option value="$PROJECT_DIR$/css/custom.css" />
         <option value="$PROJECT_DIR$/dashboard.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/css/custom.css" />
+        <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/FireFox/js/app.js" />
+        <option value="$PROJECT_DIR$/FireFox/manifest.json" />
       </list>
     </option>
   </component>
@@ -333,9 +322,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1361" />
+    <option name="width" value="974" />
     <option name="height" value="1087" />
   </component>
   <component name="ProjectView">
@@ -343,6 +332,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,18 +343,23 @@
             <path>
               <item name="Sight" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sight" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="FireFox" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sight" type="462c0819:PsiDirectoryNode" />
+              <item name="FireFox" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/ali/github shiz/Downtube" />
+    <property name="last_opened_file_path" value="E:/SnapChat data" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -424,17 +419,18 @@
       <workItem from="1548769144785" duration="1528000" />
       <workItem from="1548772417650" duration="32000" />
       <workItem from="1548784859938" duration="5162000" />
+      <workItem from="1549285343496" duration="536000" />
+      <workItem from="1549288977277" duration="25000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136051000" />
+    <option name="totallyTimeSpent" value="136944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="0" width="974" height="1087" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1654373" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33547008" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,54 +482,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE">
+    <entry file="file://$PROJECT_DIR$/background.js" />
+    <entry file="file://$PROJECT_DIR$/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/manifest.json" />
+    <entry file="file://$PROJECT_DIR$/css/custom.css" />
+    <entry file="file://$PROJECT_DIR$/dashboard.html" />
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/FireFox/background.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
+    <entry file="file://$PROJECT_DIR$/FireFox/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="449" selection-start-line="449" selection-end-line="449" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="247" column="37" selection-start-line="247" selection-start-column="37" selection-end-line="247" selection-end-column="37" />
+        <state relative-caret-position="24748">
+          <caret line="2330" selection-start-line="2204" selection-start-column="2" selection-end-line="2330" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1500#46419#0" />
+            <element signature="e#48258#134152#0" />
+            <element signature="e#134797#179169#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/FireFox/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#1464#46383#0" />
-            <element signature="e#48222#134116#0" />
-            <element signature="e#134761#179133#0" />
-          </folding>
+        <state relative-caret-position="230">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
       </provider>
     </entry>

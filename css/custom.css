@@ -393,7 +393,7 @@ hr.customHr {
     transition: all 1s;
     width: 3em;
     height: 3em;
-    background: white;
+    background: rgba(0,0,0,0.5);
     box-sizing: border-box;
     border-radius: 2em;
     border: 0px solid white;
@@ -422,10 +422,9 @@ hr.customHr {
     /*width: 42.5px;*/
     /*height: 42.5px;*/
     position: absolute;
-    top: 0;
+    top: -0.1em;
     right: 0;
     border-radius: 50%;
-    color: #07051a;
     text-align: center;
     font-size: 1.4em;
     transition: all 1s;
