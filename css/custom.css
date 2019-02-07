@@ -452,6 +452,11 @@ hr.customHr {
     background-color: rgba(0,0,0,0.8);
     left: 25em;
     -webkit-animation: ease 2s;
-    text-align: center;
+    text-align: right;
+    width: 90%;
+}
+
+.p-t-5{
+    padding-top: 5px;
 }
 

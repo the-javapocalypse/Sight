@@ -1681,25 +1681,25 @@
         if(scale){
             $('#weatherIcon').attr("src", 'http:' + weatherIcon);
             $('#weatherTemp').text( weather_f + '°F' );
-            $('#det1').text('Feels Like: ' + feelslike_f + '°F');
+            $('#det1').text('Feels Like:  ' + feelslike_f + '°F');
         }else{
             $('#weatherIcon').attr("src", 'http:' + weatherIcon);
             $('#weatherTemp').text( weather + '°C' );
-            $('#det1').text('Feels Like: ' + feelsLike + '°C');
+            $('#det1').text('Feels Like:  ' + feelsLike + '°C');
         }
-        $('#det2').text('Condition: ' + condition);
+        $('#det2').text('Condition:  ' + condition);
     }
 
     // Update Weather Details
     function updateWeatherDetailsUI(imperial) {
         if(imperial){
-            $('#det3').text('Wind: ' + wind_mph + ' mph');
-            $('#det4').text('Visiblity: ' + vis_m + ' miles');
+            $('#det3').text('Wind:  ' + wind_mph + ' mph');
+            $('#det4').text('Visiblity:  ' + vis_m + ' miles');
         }else{
-            $('#det3').text('Wind: ' + wind_kph + ' kph ');
-            $('#det4').text('Visiblity: ' + vis_km + ' km');
+            $('#det3').text('Wind:  ' + wind_kph + ' kph ');
+            $('#det4').text('Visiblity:  ' + vis_km + ' km');
         }
-        $('#det5').text('Humidity: ' + humidity + '%')
+        $('#det5').text('Humidity:  ' + humidity + '%')
     }
 
     // Write Weather Data in local storage
@@ -2199,7 +2199,7 @@
         // Mouse Enter
         function () {
             $( "#weatherDetails" ).animate({
-                left: "0",
+                left: "2em",
             }, 100, function() {
                 // Animation complete.
             });
@@ -2215,7 +2215,7 @@
         function () {
             $( "#weatherDetails" ).animate({
                 left: "25em",
-            }, 1000, function() {
+            }, 500, function() {
                 // Animation complete.
             });
         }
