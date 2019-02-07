@@ -453,5 +453,10 @@ hr.customHr {
     left: 25em;
     -webkit-animation: ease 2s;
     text-align: center;
+    width: 90%;
+}
+
+.p-t-5{
+    padding-top: 5px;
 }
 
